@@ -1,27 +1,9 @@
-// Todo Change routing from angular a to ionic
-<!-- <footer class="tabs">
-  <ng-container *ngFor="let tab of tabs">
-    <a
-      [routerLink]="tab.redirect"
-      [routerLinkActiveOptions]="{ exact: true }"
-      routerLinkActive="tab-selected"
-      class="tab"
-    >
-      <button>
-        <span>{{ tab.text | translate }}</span>
-      </button>
-    </a>
-  </ng-container>
-</footer> -->
-
-<footer class="tabs">
-  <ion-tabs>
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button *ngFor="let tab of tabs">
-        <ion-icon name="{{ tab.icon }}"></ion-icon>
-        <ion-label>{{ tab.label }}</ion-label>
-        <ion-badge *ngIf="tab.notification">!</ion-badge>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
-</footer>
+<ion-tabs class="tabs">
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button *ngFor="let tab of tabs" [tab]="tab.redirect">
+      <ion-icon name="{{ tab.icon }}"></ion-icon>
+      <ion-label>{{ tab.label }}</ion-label>
+      <ion-badge *ngIf="tab.notification">{{tab.notification}}</ion-badge>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

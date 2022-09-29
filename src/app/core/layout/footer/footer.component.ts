@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-// import { faWallet, faHouse, faPlus, faPerson } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-footer',
@@ -10,38 +8,38 @@ import { Router } from '@angular/router';
 export class FooterComponent {
   public tabs = [
     {
-      id: 'schedule',
-      icon: 'calendar-number-outline',
-      label: 'Calendario',
-      notification: true,
-      redirect: '',
+      id: 'home',
+      icon: 'home-outline',
+      label: 'Home',
+      redirect: 'home',
     },
     {
-      id: 'wallet',
-      icon: 'wallet-outline',
-      label: 'Cartera',
-      notification: false,
-      redirect: '',
+      id: 'favorites',
+      icon: 'heart-outline',
+      label: 'Favoritos',
+      redirect: 'favorites',
     },
     {
-      id: 'map',
-      icon: 'map-outline',
-      label: 'Mapa',
-      notification: false,
-      redirect: '',
+      id: 'upload',
+      icon: 'add-circle-outline',
+      label: 'Upload',
+      redirect: 'upload',
     },
     {
-      id: 'person',
+      id: 'chat',
+      icon: 'chatbubble-outline',
+      label: 'Chat',
+      notification: 2,
+      redirect: 'chat',
+    },
+    {
+      id: 'profile',
       icon: 'person-outline',
-      label: 'Perfil',
-      notification: false,
-      redirect: '',
+      label: 'You',
+      redirect: 'profile',
     },
   ];
 
-  constructor(private route: Router) {}
+  constructor() {}
 
-  gotTo(redirect: string) {
-    this.route.navigate([redirect]);
-  }
 }

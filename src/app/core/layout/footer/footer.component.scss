@@ -1,14 +1,11 @@
 @import "../../../../theme/mixin.scss";
 
-@mixin genericTab {
-  display: flex;
-  gap: var(--inner-padding);
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  flex: 1;
-}
-
 ion-tab {
   background-color: var(--ion-color-medium-tint);
+}
+
+.tabs {
+  @include for-tablet-portrait-down {
+    display: none;
+  }
 }
