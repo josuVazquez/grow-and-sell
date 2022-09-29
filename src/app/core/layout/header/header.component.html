@@ -1,15 +1,20 @@
 <header class="header">
-  <button (click)="clickHome()" class="button-home">
-    <ion-icon name="home-outline"></ion-icon>
-  </button>
+  <ion-button shape="round" (click)="clickHome()" class="button-home">
+    <ion-icon slot="icon-only" name="home"></ion-icon>
+  </ion-button>
+
   <div class="input-div">
     <ion-icon name="search-outline"></ion-icon>
-    <input type="text" class="input" placeholder="Soy un placeholder" />
+    <ion-input
+      type="text"
+      class="input"
+      placeholder="Soy un placeholder"
+    ></ion-input>
   </div>
+
   <div class="right-div">
-    <button class="button" (click)="openLoginModal()">
+    <ion-button (click)="openLoginModal()">
       <ion-icon name="person-circle-outline"></ion-icon>
-      <span>{{ "buttons.profile" | translate }}</span>
-    </button>
+    </ion-button>
   </div>
 </header>

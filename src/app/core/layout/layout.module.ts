@@ -5,24 +5,19 @@ import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { IonicModule } from '@ionic/angular';
 
 
 @NgModule({
-  declarations: [
-    LayoutComponent,
-    HeaderComponent,
-    FooterComponent,
-  ],
+  declarations: [LayoutComponent, HeaderComponent, FooterComponent],
   imports: [
+    IonicModule,
     BrowserModule,
     AppRoutingModule,
     TranslateModule.forChild({
-      extend: true
-    })
+      extend: true,
+    }),
   ],
-  exports: [
-    LayoutComponent
-  ]
+  exports: [LayoutComponent],
 })
-export class LayoutModule { }
+export class LayoutModule {}
