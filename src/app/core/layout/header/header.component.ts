@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { faSearch, faHouse, faComment, faUser, faCirclePlus } from '@fortawesome/free-solid-svg-icons';
+// import { faSearch, faHouse, faComment, faUser, faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -8,11 +8,11 @@ import { faSearch, faHouse, faComment, faUser, faCirclePlus } from '@fortawesome
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  faSearch = faSearch;
-  faHouse = faHouse;
-  faComment = faComment;
-  faUser = faUser;
-  faCirclePlus = faCirclePlus;
+  // faSearch = faSearch;
+  // faHouse = faHouse;
+  // faComment = faComment;
+  // faUser = faUser;
+  // faCirclePlus = faCirclePlus;
 
   constructor(private router: Router) {
 
