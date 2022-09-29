@@ -1,104 +1,103 @@
 @import "../../../../theme/mixin.scss";
-// @import "../../../theme/mixin.scss";
 
 .header {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 15px;
-    align-items: center;
-    height: 65px;
-    position: sticky;
-    top: 0;
-    background-color: white;    
-    padding: {
-        left: 15px;
-        right: 15px;
-    };
-    z-index: 3;
-    border-bottom: 1px solid;
-    border-color: rgba(236,239,241,.5);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+  height: 65px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  padding: {
+    left: 15px;
+    right: 15px;
+  }
+  z-index: 3;
+  border-bottom: 1px solid;
+  border-color: rgba(236, 239, 241, 0.5);
 }
 
 .input-div {
-    display: flex;
-    gap: 12px;
-    width: 65%;
-    color: var(--not-selected);
-    justify-self: center;
-    flex: 1;
+  display: flex;
+  gap: 12px;
+  width: 65%;
+  color: var(--not-selected);
+  justify-self: center;
+  flex: 1;
 }
 
 .input-div:focus-within {
-    color: var(--primary);
-    border: 1px solid var(--primary);
-    border-radius: 25px;
-    padding: 10px;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 25px;
+  padding: 10px;
 }
 
 .input {
-    flex: 1;
-    border: 0;
+  flex: 1;
+  border: 0;
 }
 
 .right-div {
-    display: flex;
-    gap: 12px;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    @include for-tablet-landscape-down {
-        display: none;
-    }
+  display: flex;
+  gap: 12px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  @include for-tablet-landscape-up {
+    display: none;
+  }
 }
 
 .input:focus {
-    outline: none;
+  outline: none;
 }
 
 .button {
-    border: 0;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    height: 100%;
-    &:hover {
-        cursor: pointer;
-        border-bottom: 2px solid var(--primary);
-    }
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 100%;
+  &:hover {
+    cursor: pointer;
+    border-bottom: 2px solid var(--primary);
+  }
 }
 
 .button-upload {
-    max-height: 45px;
-    border: 0;
-    display: inline-flex;
-    align-items: center;
-    gap: var(--inner-padding);
-    padding: {
-        left: var(--outside-padding);
-        right: var(--outside-padding);
-    };
-    border-radius: 20px;
-    color: white;
-    background-color: var(--primary);
+  max-height: 45px;
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--inner-padding);
+  padding: {
+    left: var(--outside-padding);
+    right: var(--outside-padding);
+  }
+  border-radius: 20px;
+  color: white;
+  background-color: var(--primary);
+  fa-icon {
+    border-radius: 50%;
+    background-color: white;
+    color: var(--primary);
+  }
+  &:hover {
     fa-icon {
-        border-radius: 50%;
-        background-color: white;
-        color: var(--primary);
+      background-color: var(--primary);
+      color: white;
     }
-    &:hover {
-        fa-icon {
-            background-color: var(--primary);
-            color: white;
-        }
-        cursor: pointer;
-        background-color: var(--primary-darker);
-    }
+    cursor: pointer;
+    background-color: var(--primary-darker);
+  }
 }
 
 .button-home {
-    border: 0;
-    &:hover {
-        cursor: pointer;
-    }
+  border: 0;
+  &:hover {
+    cursor: pointer;
+  }
 }
