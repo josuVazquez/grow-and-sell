@@ -23,21 +23,17 @@
   display: flex;
   gap: 12px;
   width: 65%;
+  align-items: center;
   color: var(--not-selected);
   justify-self: center;
   flex: 1;
 }
 
 .input-div:focus-within {
-  color: var(--primary);
-  border: 1px solid var(--primary);
+  color: var(--ion-color-primary);
+  border: 1px solid var(--ion-color-primary);
   border-radius: 25px;
   padding: 10px;
-}
-
-.input {
-  flex: 1;
-  border: 0;
 }
 
 .right-div {
@@ -53,51 +49,4 @@
 
 .input:focus {
   outline: none;
-}
-
-.button {
-  border: 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  height: 100%;
-  &:hover {
-    cursor: pointer;
-    border-bottom: 2px solid var(--primary);
-  }
-}
-
-.button-upload {
-  max-height: 45px;
-  border: 0;
-  display: inline-flex;
-  align-items: center;
-  gap: var(--inner-padding);
-  padding: {
-    left: var(--outside-padding);
-    right: var(--outside-padding);
-  }
-  border-radius: 20px;
-  color: white;
-  background-color: var(--primary);
-  fa-icon {
-    border-radius: 50%;
-    background-color: white;
-    color: var(--primary);
-  }
-  &:hover {
-    fa-icon {
-      background-color: var(--primary);
-      color: white;
-    }
-    cursor: pointer;
-    background-color: var(--primary-darker);
-  }
-}
-
-.button-home {
-  border: 0;
-  &:hover {
-    cursor: pointer;
-  }
 }
