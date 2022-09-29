@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
+import { LoginModalComponent } from 'src/app/shared/components/login-modal/login-modal.component';
 
 @Component({
   selector: 'app-header',
@@ -7,13 +9,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private modalController: ModalController) {}
 
   clickHome() {
     this.router.navigate(['home']);
   }
 
-  openLoginModal() {}
+  async openLoginModal() {
+    console.log('h1')
+    const modal = await this.modalController.create({
+      component: LoginModalComponent
+    });
+    modal.present();
+  }
 
   openChat() {
     this.router.navigate(['chat']);

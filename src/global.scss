@@ -14,7 +14,7 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
-.button__icon {
+.button--icon {
   --background: none;
   --background-hover: #9ce0be;
   --background-activated: #88f4be;
@@ -22,6 +22,14 @@
   --color: var(--ion-color-primary);
   --box-shadow: 0;
   --ripple-color: deeppink;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+}
+
+.button--round {
+  display: flex;
+  gap: 24px;
+  --border-radius: 24px;
   --padding-top: 10px;
   --padding-bottom: 10px;
 }
