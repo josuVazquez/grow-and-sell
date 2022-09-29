@@ -5,30 +5,38 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent {
   public tabs = [
-    // {
-    //   icon: faHouse,
-    //   text: 'buttons.home',
-    //   redirect: '/'
-    // },
-    // {
-    //   icon: faWallet,
-    //   text: 'buttons.portfolio',
-    //   redirect: '/portfolio'
-    // },
-    // {
-    //   icon: faPlus,
-    //   text: 'buttons.new',
-    //   redirect: '/new'
-    // },
-    // {
-    //   icon: faPerson,
-    //   text: 'buttons.profile',
-    //   redirect: '/profile'
-    // }
+    {
+      id: 'schedule',
+      icon: 'calendar-number-outline',
+      label: 'Calendario',
+      notification: true,
+      redirect: '',
+    },
+    {
+      id: 'wallet',
+      icon: 'wallet-outline',
+      label: 'Cartera',
+      notification: false,
+      redirect: '',
+    },
+    {
+      id: 'map',
+      icon: 'map-outline',
+      label: 'Mapa',
+      notification: false,
+      redirect: '',
+    },
+    {
+      id: 'person',
+      icon: 'person-outline',
+      label: 'Perfil',
+      notification: false,
+      redirect: '',
+    },
   ];
 
   constructor(private route: Router) {}
@@ -36,5 +44,4 @@ export class FooterComponent {
   gotTo(redirect: string) {
     this.route.navigate([redirect]);
   }
-
 }

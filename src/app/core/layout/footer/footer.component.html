@@ -1,5 +1,5 @@
 // Todo Change routing from angular a to ionic
-<footer class="tabs">
+<!-- <footer class="tabs">
   <ng-container *ngFor="let tab of tabs">
     <a
       [routerLink]="tab.redirect"
@@ -8,9 +8,20 @@
       class="tab"
     >
       <button>
-        <!-- <fa-icon [icon]="tab.icon" size="2x"></fa-icon> -->
         <span>{{ tab.text | translate }}</span>
       </button>
     </a>
   </ng-container>
+</footer> -->
+
+<footer class="tabs">
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button *ngFor="let tab of tabs">
+        <ion-icon name="{{ tab.icon }}"></ion-icon>
+        <ion-label>{{ tab.label }}</ion-label>
+        <ion-badge *ngIf="tab.notification">!</ion-badge>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 </footer>
