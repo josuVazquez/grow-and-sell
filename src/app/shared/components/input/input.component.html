@@ -1,7 +1,15 @@
 <div class="input-div">
   <ion-icon name="{{ name }}"></ion-icon>
   <ion-input
+    *ngIf="type !== 'password'"
     type="text"
+    class="input"
+    placeholder="{{ placeholder | translate }}"
+  ></ion-input>
+
+  <ion-input
+    *ngIf="type === 'password'"
+    type="password"
     class="input"
     placeholder="{{ placeholder | translate }}"
   ></ion-input>

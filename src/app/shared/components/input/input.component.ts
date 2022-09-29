@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
 export class InputComponent {
   @Input() name: string;
   @Input() placeholder: string;
+  @Input() type: string;
 
   constructor() {}
 }

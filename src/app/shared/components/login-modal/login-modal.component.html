@@ -2,13 +2,19 @@
   ><ion-icon name="close"></ion-icon
 ></ion-button>
 <ion-content class="content">
-  <!-- <div class="login__text">
+  <div class="login__text">
     <h3>Welcome</h3>
     <span>Register or sign in</span>
 
     <app-input
-      [name]="'search-outline'"
-      [placeholder]="'HEADER.INPUT.PLACEHOLDER'"
+      [name]="'text-outline'"
+      [placeholder]="'LOGIN.PLACEHOLDER.USERNAME'"
+    ></app-input>
+
+    <app-input
+      [name]="'text-outline'"
+      [placeholder]="'LOGIN.PLACEHOLDER.PASSWORD'"
+      [type]="'password'"
     ></app-input>
   </div>
 
@@ -21,7 +27,7 @@
       <ion-icon name="logo-facebook"></ion-icon>
       <b>Log in with Facebook</b>
     </ion-button>
-  </div> -->
+  </div>
 
   <app-input
     [name]="'search-outline'"
