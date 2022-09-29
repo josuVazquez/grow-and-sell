@@ -1,0 +1,23 @@
+@import "../../styles/mixin.scss";
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100vh;
+    width: 100%;
+}
+
+.content {
+    flex: 1;
+    padding: var(--outside-padding);
+    padding-left: 10%;
+    padding-right: 10%;
+    @include for-desktop-up { 
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+    @include for-tablet-landscape-down {
+        padding: var(--outside-padding);
+    }
+}
