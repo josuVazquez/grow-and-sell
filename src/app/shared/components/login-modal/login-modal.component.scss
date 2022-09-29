@@ -1,31 +1,31 @@
 .login__text {
-    text-align: center;
-    display: flex;
-    gap: 32px;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+  text-align: center;
+  display: flex;
+  gap: 32px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .button--close {
-    width: fit-content;
-    margin-left: auto;
+  width: fit-content;
+  margin-left: auto;
 }
 
 .button--facebook {
-    --background-hover: #3c5ea3;
-    --background-activated: #4267B2;
-    --background-focused: #4267B2;
-    --background: #4267B2;
-    --color: white;
+  --background-hover: #3c5ea3;
+  --background-activated: #4267b2;
+  --background-focused: #4267b2;
+  --background: #4267b2;
+  --color: white;
 }
 
 .button--google {
-    --background-hover: #FFFFFF;
-    --background-activated: #FFFFFF;
-    --background-focused: #FFFFFF;
-    --background: #FFFFFF;
-    --color: black;
+  --background-hover: #ffffff;
+  --background-activated: #ffffff;
+  --background-focused: #ffffff;
+  --background: #ffffff;
+  --color: black;
 }

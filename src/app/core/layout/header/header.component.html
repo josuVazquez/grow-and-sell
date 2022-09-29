@@ -3,14 +3,10 @@
     <ion-icon slot="icon-only" name="home"></ion-icon>
   </ion-button>
 
-  <div class="input-div">
-    <ion-icon name="search-outline"></ion-icon>
-    <ion-input
-      type="text"
-      class="input"
-      placeholder="{{ 'HEADER.INPUT.PLACEHOLDER' | translate }}"
-    ></ion-input>
-  </div>
+  <app-input
+    [name]="'search-outline'"
+    [placeholder]="'HEADER.INPUT.PLACEHOLDER'"
+  ></app-input>
 
   <div class="right-div">
     <ion-button (click)="openLoginModal()" class="button--icon">

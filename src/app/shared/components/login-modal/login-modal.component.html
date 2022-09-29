@@ -1,9 +1,17 @@
-<ion-button (click)="close()" class="button--icon button--close"><ion-icon name="close"></ion-icon></ion-button>
+<ion-button (click)="close()" class="button--icon button--close"
+  ><ion-icon name="close"></ion-icon
+></ion-button>
 <ion-content class="content">
-  <div class="login__text">
+  <!-- <div class="login__text">
     <h3>Welcome</h3>
     <span>Register or sign in</span>
+
+    <app-input
+      [name]="'search-outline'"
+      [placeholder]="'HEADER.INPUT.PLACEHOLDER'"
+    ></app-input>
   </div>
+
   <div>
     <ion-button class="button--round button--google">
       <ion-icon name="logo-google"></ion-icon>
@@ -13,5 +21,10 @@
       <ion-icon name="logo-facebook"></ion-icon>
       <b>Log in with Facebook</b>
     </ion-button>
-  </div>
+  </div> -->
+
+  <app-input
+    [name]="'search-outline'"
+    [plaeholder]="'HEADER.INPUT.PLACEHOLDER'"
+  ></app-input>
 </ion-content>

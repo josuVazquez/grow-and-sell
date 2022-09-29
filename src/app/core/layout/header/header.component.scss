@@ -19,41 +19,15 @@
   border-color: rgba(236, 239, 241, 0.5);
 }
 
-.input-div {
-  display: flex;
-  gap: 12px;
-  width: 65%;
-  align-items: center;
-  color: var(--not-selected);
-  justify-self: center;
-  flex: 1;
-
-}
-
-.input-div:focus-within {
-  color: var(--ion-color-primary);
-  border: 1px solid var(--ion-color-primary);
-  border-radius: 25px;
-  padding: 10px;
-}
-
 .right-div {
   display: flex;
   gap: 12px;
   height: 100%;
   align-items: center;
   justify-content: center;
-  @include for-tablet-landscape-up {
-    display: none;
-  }
-}
 
-.input {
-  --padding-top: 0;
-  --padding-bottom: 0;
-  --padding-end: 0;
-  --padding-start: 0;
-  :focus {
-    outline: none;
+  @include tablet;
+  @include smartphone {
+    display: none;
   }
 }

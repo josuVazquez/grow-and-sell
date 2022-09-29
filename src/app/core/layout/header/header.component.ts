@@ -16,7 +16,6 @@ export class HeaderComponent {
   }
 
   async openLoginModal() {
-    console.log('h1')
     const modal = await this.modalController.create({
       component: LoginModalComponent
     });
