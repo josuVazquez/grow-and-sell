@@ -1,19 +1,12 @@
 import { NgModule } from '@angular/core';
-import { LayoutComponent } from './layout.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicModule } from '@ionic/angular';
-import { InputComponentModule } from 'src/app/shared/components/input/input.module';
+import { InputComponentModule } from '../input/input.module';
 
 @NgModule({
-  declarations: [
-    LayoutComponent,
-    HeaderComponent,
-    FooterComponent,
-  ],
+  declarations: [LoginModalComponent],
   imports: [
     IonicModule,
     BrowserModule,
@@ -23,6 +16,6 @@ import { InputComponentModule } from 'src/app/shared/components/input/input.modu
       extend: true,
     }),
   ],
-  exports: [LayoutComponent],
+  exports: [LoginModalComponent],
 })
-export class LayoutModule {}
+export class LoginModalComponent {}

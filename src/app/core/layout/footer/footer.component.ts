@@ -1,40 +1,45 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-// import { faWallet, faHouse, faPlus, faPerson } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent {
   public tabs = [
-    // {
-    //   icon: faHouse,
-    //   text: 'buttons.home',
-    //   redirect: '/'
-    // },
-    // {
-    //   icon: faWallet,
-    //   text: 'buttons.portfolio',
-    //   redirect: '/portfolio'
-    // },
-    // {
-    //   icon: faPlus,
-    //   text: 'buttons.new',
-    //   redirect: '/new'
-    // },
-    // {
-    //   icon: faPerson,
-    //   text: 'buttons.profile',
-    //   redirect: '/profile'
-    // }
+    {
+      id: 'home',
+      icon: 'home-outline',
+      label: 'Home',
+      redirect: 'home',
+    },
+    {
+      id: 'favorites',
+      icon: 'heart-outline',
+      label: 'Favoritos',
+      redirect: 'favorites',
+    },
+    {
+      id: 'upload',
+      icon: 'add-circle-outline',
+      label: 'Upload',
+      redirect: 'upload',
+    },
+    {
+      id: 'chat',
+      icon: 'chatbubble-outline',
+      label: 'Chat',
+      notification: 2,
+      redirect: 'chat',
+    },
+    {
+      id: 'profile',
+      icon: 'person-outline',
+      label: 'You',
+      redirect: 'profile',
+    },
   ];
 
-  constructor(private route: Router) {}
-
-  gotTo(redirect: string) {
-    this.route.navigate([redirect]);
-  }
+  constructor() {}
 
 }

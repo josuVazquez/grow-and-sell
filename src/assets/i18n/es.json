@@ -1,0 +1,14 @@
+{
+  "HEADER": {
+    "PRUEBA": "Hola",
+    "INPUT": {
+      "PLACEHOLDER": "Soy el placeholder"
+    }
+  },
+  "LOGIN": {
+    "PLACEHOLDER": {
+      "USERNAME": "Inserte el usuario",
+      "PASSWORD": "Inserte la contraseña"
+    }
+  }
+}

@@ -1,29 +1,26 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-// import { faSearch, faHouse, faComment, faUser, faCirclePlus } from '@fortawesome/free-solid-svg-icons';
+import { ModalController } from '@ionic/angular';
+import { LoginModalComponent } from 'src/app/shared/components/login-modal/login-modal.component';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  // faSearch = faSearch;
-  // faHouse = faHouse;
-  // faComment = faComment;
-  // faUser = faUser;
-  // faCirclePlus = faCirclePlus;
-
-  constructor(private router: Router) {
-
-  }
+  constructor(private router: Router, private modalController: ModalController) {}
 
   clickHome() {
     this.router.navigate(['home']);
   }
 
-  openLoginModal() {
-
+  async openLoginModal() {
+    const modal = await this.modalController.create({
+      component: LoginModalComponent,
+      cssClass: 'modal--small'
+    });
+    modal.present();
   }
 
   openChat() {
