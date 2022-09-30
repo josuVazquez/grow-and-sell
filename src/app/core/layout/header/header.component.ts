@@ -9,7 +9,12 @@ import { LoginModalComponent } from 'src/app/shared/components/login-modal/login
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  constructor(private router: Router, private modalController: ModalController) {}
+  logged: Boolean;
+
+  constructor(
+    private router: Router,
+    private modalController: ModalController
+  ) {}
 
   clickHome() {
     this.router.navigate(['home']);

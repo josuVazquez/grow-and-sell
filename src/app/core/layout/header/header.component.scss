@@ -26,9 +26,63 @@
   align-items: center;
   justify-content: center;
 
-  @include tablet;
   @include smartphone {
     display: none;
+  }
+}
+
+.logged {
+  display: flex;
+  flex-direction: 2px;
+  grid-gap: 5px;
+
+  .btn {
+    border: 1px solid var(--ion-color-primary);
+    border-radius: 25px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    p {
+      margin: 0px;
+    }
+
+    ion-icon {
+      font-size: 24px;
+    }
+
+    @include tablet {
+      border: none;
+      background-color: transparent;
+
+      p {
+        display: none;
+      }
+
+      ion-icon {
+        color: var(--ion-color-primary);
+      }
+    }
+  }
+}
+
+.btn-primary {
+  background-color: var(--ion-color-primary);
+  p {
+    color: white;
+    font-weight: 600;
+  }
+  ion-icon {
+    color: white;
+  }
+}
+
+.btn-secondary {
+  ion-icon {
+    color: var(--ion-color-primary);
+  }
+  p {
+    color: var(--ion-color-primary);
   }
 }
 

@@ -1,11 +1,13 @@
 {
   "HEADER": {
-    "PRUEBA": "Hola",
     "INPUT": {
       "PLACEHOLDER": "Soy el placeholder"
-    }
+    },
+    "ADD_PRODUCT": "Añadir producto",
+    "LOGIN": "Registrarse o Iniciar sesion"
   },
   "LOGIN": {
+    "TITLE": "Bienvenido",
     "PLACEHOLDER": {
       "USERNAME": "Inserte el usuario",
       "PASSWORD": "Inserte la contraseña"

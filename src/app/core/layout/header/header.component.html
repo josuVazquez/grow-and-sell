@@ -1,5 +1,5 @@
 <header class="header">
-  <ion-button shape="round" (click)="clickHome()" class="button--icon">
+  <ion-button shape="round" (click)="clickHome()" fill="clear">
     <ion-icon slot="icon-only" name="home"></ion-icon>
   </ion-button>
 
@@ -10,14 +10,33 @@
   ></app-input>
 
   <div class="right-div">
-    <ion-button (click)="openLoginModal()" class="button--icon">
-      <ion-icon name="person-circle-outline"></ion-icon>
-    </ion-button>
-    <ion-button (click)="openLoginModal()" class="button--icon">
-      <ion-icon name="person-circle-outline"></ion-icon>
-    </ion-button>
-    <ion-button (click)="openLoginModal()" class="button--icon">
-      <ion-icon name="person-circle-outline"></ion-icon>
-    </ion-button>
+    <div class="logged" *ngIf="logged">
+      <div class="btn btn-primary" (click)="openLoginModal()">
+        <ion-icon name="add-circle-outline"></ion-icon>
+        <p>{{ "HEADER.ADD_PRODUCT" | translate }}</p>
+      </div>
+
+      <div class="btn btn-primary" (click)="openLoginModal()">
+        <ion-icon name="add-circle-outline"></ion-icon>
+        <p>{{ "HEADER.ADD_PRODUCT" | translate }}</p>
+      </div>
+
+      <div class="btn btn-primary" (click)="openLoginModal()">
+        <ion-icon name="add-circle-outline"></ion-icon>
+        <p>{{ "HEADER.ADD_PRODUCT" | translate }}</p>
+      </div>
+    </div>
+
+    <div class="logged" *ngIf="!logged">
+      <div class="btn btn-secondary" (click)="openLoginModal()">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <p>{{ "HEADER.LOGIN" | translate }}</p>
+      </div>
+
+      <div class="btn btn-primary" (click)="openLoginModal()">
+        <ion-icon name="add-circle-outline"></ion-icon>
+        <p>{{ "HEADER.ADD_PRODUCT" | translate }}</p>
+      </div>
+    </div>
   </div>
 </header>
