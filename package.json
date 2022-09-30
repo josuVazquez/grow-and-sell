@@ -25,7 +25,6 @@
     "@ngx-translate/http-loader": "^7.0.0",
     "firebase": "^9.10.0",
     "ionicons": "^6.0.3",
-    "redux": "^4.2.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
