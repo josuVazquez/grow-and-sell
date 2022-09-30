@@ -6,6 +6,6 @@ ion-tab {
 
 .tabs {
   @include for-tablet-portrait-down {
-    display: none;
+    visibility: hidden;
   }
 }

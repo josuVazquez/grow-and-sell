@@ -1,5 +1,5 @@
-<ion-tabs class="tabs">
-  <ion-tab-bar slot="bottom">
+<ion-tabs>
+  <ion-tab-bar class="tabs" slot="bottom">
     <ion-tab-button *ngFor="let tab of tabs" [tab]="tab.redirect">
       <ion-icon name="{{ tab.icon }}"></ion-icon>
       <ion-label>{{ tab.label }}</ion-label>

@@ -10,5 +10,13 @@
       "USERNAME": "Inserte el usuario",
       "PASSWORD": "Inserte la contraseña"
     }
+  },
+  "ProductTypes": {
+    "vegetables": "Verduras/Ortalizas",
+    "fruits": "Frutas",
+    "dairyProducts": "Productos Lacteos",
+    "legumes": "Legumbres",
+    "tubers": "Tuberculos",
+    "eggs": "Huevos"
   }
 }

@@ -56,7 +56,7 @@ export const httpLoaderFactory = (http: HttpClient) =>
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true,
-    },
+    }
   ],
   bootstrap: [AppComponent],
 })

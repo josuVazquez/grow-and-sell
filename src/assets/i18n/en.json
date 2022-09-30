@@ -1,5 +1,13 @@
 {
   "HEADER": {
     "PRUEBA": "Hello"
+  },
+  "ProductTypes": {
+    "vegetables": "Vegetables",
+    "fruits": "Fruits",
+    "dairyProducts": "Dairy Products",
+    "legumes": "Legumes",
+    "tubers": "Tubers",
+    "eggs": "Eggs"
   }
 }

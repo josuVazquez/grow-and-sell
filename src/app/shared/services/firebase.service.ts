@@ -8,6 +8,8 @@ import * as auth from 'firebase/auth';
 import { User } from '../models/user.model';
 import { UserService } from './user.service';
 
+import { JwtHelperService } from '@auth0/angular-jwt';
+const helper = new JwtHelperService();
 @Injectable({
   providedIn: 'root'
 })
@@ -16,14 +18,15 @@ export class FirebaseService {
     public afStore: AngularFirestore,
     public ngFireAuth: AngularFireAuth,
     private userService: UserService,
-    private router: Router,
-    private ngZone: NgZone) {
-    this.ngFireAuth.authState.subscribe((user) => {
-      this.setUser(user ? new User({...user}) : null)
-    });
+    private router: Router) {
+    // this.ngFireAuth.authState.subscribe((user) => {
+    //   this.setUser(user ? new User({...user}) : null)
+    // });
   }
 
   setUser(user: User) {
+    console.log('setting')
+    console.log(user)
     localStorage.setItem('user', JSON.stringify(user || {}));
     this.userService.setUser(user)
   }
@@ -57,16 +60,6 @@ export class FirebaseService {
       });
   }
 
-  get isLoggedIn(): boolean {
-    const user = JSON.parse(localStorage.getItem('user'));
-    return user !== null && user.emailVerified !== false ? true : false;
-  }
-
-  get isEmailVerified(): boolean {
-    const user = JSON.parse(localStorage.getItem('user'));
-    return user.emailVerified !== false ? true : false;
-  }
-
   GoogleAuth() {
     return this.AuthLogin(new auth.GoogleAuthProvider());
   }
@@ -82,9 +75,6 @@ export class FirebaseService {
           photoURL: result.user.photoURL, 
           emailVerified: result.user.emailVerified, 
           ...result.credential});
-          this.ngZone.run(() => {
-            this.router.navigate(['home']);
-          });
       })
       .catch((error) => {
         console.log(error)
@@ -98,7 +88,6 @@ export class FirebaseService {
       `users/${user.uid}`
     );
     const us = new User({...user});
-    console.log(us)
     this.setUser(us);
     return userRef.set(us.toObject(), {
       merge: true,
@@ -109,5 +98,12 @@ export class FirebaseService {
     return this.ngFireAuth.signOut().then(() => {
       this.router.navigate(['home']);
     });
+  }
+  
+  tryToReload() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    if(user && user.idToken && !helper.isTokenExpired(user.idToken)) {
+      this.setUser({...user});
+    }
   }
 }
