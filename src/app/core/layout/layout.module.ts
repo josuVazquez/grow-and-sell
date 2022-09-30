@@ -6,18 +6,14 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicModule } from '@ionic/angular';
-import { InputComponentModule } from 'src/app/shared/components/input/input.module';
+import { ComponentsModule } from 'src/app/shared/components/components.module';
 
 @NgModule({
-  declarations: [
-    LayoutComponent,
-    HeaderComponent,
-    FooterComponent,
-  ],
+  declarations: [LayoutComponent, HeaderComponent, FooterComponent],
   imports: [
+    ComponentsModule,
     IonicModule,
     BrowserModule,
-    InputComponentModule,
     AppRoutingModule,
     TranslateModule.forChild({
       extend: true,

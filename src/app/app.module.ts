@@ -17,13 +17,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
 import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth'
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { InputComponent } from './shared/components/input/input.component';
+import { ComponentsModule } from './shared/components/components.module';
 
 export const httpLoaderFactory = (http: HttpClient) =>
   new TranslateHttpLoader(http);
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    ComponentsModule,
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(),
@@ -56,7 +59,7 @@ export const httpLoaderFactory = (http: HttpClient) =>
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true,
-    }
+    },
   ],
   bootstrap: [AppComponent],
 })

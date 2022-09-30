@@ -1,21 +1,23 @@
 import { NgModule } from '@angular/core';
+
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicModule } from '@ionic/angular';
-import { InputComponentModule } from '../input/input.module';
+import { InputComponent } from './input/input.component';
+import { LoginModalComponent } from './login-modal/login-modal.component';
 
+const components = [InputComponent, LoginModalComponent];
 @NgModule({
-  declarations: [LoginModalComponent],
+  declarations: [...components],
   imports: [
     IonicModule,
     BrowserModule,
-    InputComponentModule,
     AppRoutingModule,
     TranslateModule.forChild({
       extend: true,
     }),
   ],
-  exports: [LoginModalComponent],
+  exports: [...components],
 })
-export class LoginModalComponent {}
+export class ComponentsModule {}
