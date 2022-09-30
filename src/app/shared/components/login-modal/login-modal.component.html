@@ -1,36 +1,21 @@
 <ion-button (click)="close()" class="button--icon button--close"
   ><ion-icon name="close"></ion-icon
 ></ion-button>
-<ion-content class="content">
+<div class="content">
   <div class="login__text">
     <h3>Welcome</h3>
     <span>Register or sign in</span>
-
-    <app-input
-      [name]="'text-outline'"
-      [placeholder]="'LOGIN.PLACEHOLDER.USERNAME'"
-    ></app-input>
-
-    <app-input
-      [name]="'text-outline'"
-      [placeholder]="'LOGIN.PLACEHOLDER.PASSWORD'"
-      [type]="'password'"
-    ></app-input>
   </div>
 
-  <div>
+  <div class="login--buttons">
     <ion-button class="button--round button--google" (click)="loginGoogle()">
       <ion-icon name="logo-google"></ion-icon>
       <b>Log in with Google</b>
     </ion-button>
-    <ion-button class="button--round button--facebook">
+    <!-- <ion-button class="button--round button--facebook">
       <ion-icon name="logo-facebook"></ion-icon>
       <b>Log in with Facebook</b>
-    </ion-button>
+    </ion-button> -->
   </div>
 
-  <app-input
-    [name]="'search-outline'"
-    [plaeholder]="'HEADER.INPUT.PLACEHOLDER'"
-  ></app-input>
-</ion-content>
+</div>

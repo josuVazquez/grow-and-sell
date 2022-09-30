@@ -29,3 +29,17 @@
   --background: #ffffff;
   --color: black;
 }
+
+.login--buttons {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
