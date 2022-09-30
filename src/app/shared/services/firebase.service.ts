@@ -5,28 +5,27 @@ import {
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import * as auth from 'firebase/auth';
+import { User } from '../models/user.model';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseService {
-  userData: any;
-
   constructor(
     public afStore: AngularFirestore,
     public ngFireAuth: AngularFireAuth,
+    private userService: UserService,
     private router: Router,
     private ngZone: NgZone) {
     this.ngFireAuth.authState.subscribe((user) => {
-      if (user) {
-        this.userData = user;
-        localStorage.setItem('user', JSON.stringify(this.userData));
-        JSON.parse(localStorage.getItem('user'));
-      } else {
-        localStorage.setItem('user', null);
-        JSON.parse(localStorage.getItem('user'));
-      }
+      this.setUser(user ? new User({...user}) : null)
     });
+  }
+
+  setUser(user: User) {
+    localStorage.setItem('user', JSON.stringify(user || {}));
+    this.userService.setUser(user)
   }
 
   SignIn(email, password) {
@@ -76,36 +75,39 @@ export class FirebaseService {
     return this.ngFireAuth
       .signInWithPopup(provider)
       .then((result) => {
-        this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
-        });
-        this.SetUserData(result.user);
+        this.SetUserData({
+          uid: result.user.uid, 
+          email: result.user.email, 
+          displayName: result.user.displayName, 
+          photoURL: result.user.photoURL, 
+          emailVerified: result.user.emailVerified, 
+          ...result.credential});
+          this.ngZone.run(() => {
+            this.router.navigate(['home']);
+          });
       })
       .catch((error) => {
+        console.log(error)
         window.alert(error);
       });
   }
 
   SetUserData(user) {
+    console.log(user)
     const userRef: AngularFirestoreDocument<any> = this.afStore.doc(
       `users/${user.uid}`
     );
-    const userData = {
-      uid: user.uid,
-      email: user.email,
-      displayName: user.displayName,
-      photoURL: user.photoURL,
-      emailVerified: user.emailVerified,
-    };
-    return userRef.set(userData, {
+    const us = new User({...user});
+    console.log(us)
+    this.setUser(us);
+    return userRef.set(us.toObject(), {
       merge: true,
     });
   }
 
   SignOut() {
     return this.ngFireAuth.signOut().then(() => {
-      localStorage.removeItem('user');
-      this.router.navigate(['login']);
+      this.router.navigate(['home']);
     });
   }
 }
