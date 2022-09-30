@@ -14,6 +14,10 @@ import { LayoutModule } from './core/layout/layout.module';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth'
 
 export const httpLoaderFactory = (http: HttpClient) =>
   new TranslateHttpLoader(http);
@@ -33,6 +37,8 @@ export const httpLoaderFactory = (http: HttpClient) =>
     }),
     AppRoutingModule,
     LayoutModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
