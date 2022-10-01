@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
+  data = {
+    name: 'Nombre Apellido Apellido',
+    email: 'example@example.com',
+    phone: '+34 12393123',
+    rating: '3.0 / 5.0',
+  };
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
