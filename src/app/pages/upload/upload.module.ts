@@ -1,16 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
-import { UploadRoutingModule } from './upload-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
 
+import { UploadPageRoutingModule } from './upload-routing.module';
+
+import { UploadPage } from './upload.page';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
-  declarations: [],
   imports: [
     CommonModule,
-    UploadRoutingModule,
-    ReactiveFormsModule,
-  ]
+    FormsModule,
+    IonicModule,
+    UploadPageRoutingModule,
+    TranslateModule,
+  ],
+  declarations: [UploadPage],
 })
-export class UploadModule { }
+export class UploadPageModule {}
