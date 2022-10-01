@@ -6,7 +6,7 @@ import { IonicModule } from '@ionic/angular';
 import { InputComponent } from './input/input.component';
 import { LoginModalComponent } from './login-modal/login-modal.component';
 import { CurrencyDropDownComponent } from './currency-drop-down/currency-drop-down.component';
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 
 const components = [InputComponent, LoginModalComponent, CurrencyDropDownComponent];
 @NgModule({
@@ -19,5 +19,6 @@ const components = [InputComponent, LoginModalComponent, CurrencyDropDownCompone
     }),
   ],
   exports: [...components],
+  providers: [CurrencyPipe]
 })
 export class ComponentsModule {}
