@@ -6,8 +6,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { UploadPageRoutingModule } from './upload-routing.module';
 
-import { UploadPage } from './upload.page';
 import { TranslateModule } from '@ngx-translate/core';
+import { UploadPage } from './upload.page';
 
 @NgModule({
   imports: [
