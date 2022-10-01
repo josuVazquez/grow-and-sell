@@ -1,0 +1,19 @@
+@import "../../../../theme/mixin.scss";
+
+ion-card {
+  box-shadow: rgb(121 174 163 / 12%) 0px 4px 16px;
+  width: 20%;
+}
+
+@include tablet;
+@include smartphone {
+  ion-card {
+    width: 94%;
+    display: flex;
+    flex: 1 1 auto;
+    padding-right: 3%;
+    img {
+      width: 45%;
+    }
+  }
+}
