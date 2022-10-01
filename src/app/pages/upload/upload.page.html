@@ -4,7 +4,10 @@
     <ion-item>
       <ion-label>What type of fresh product are you selling?</ion-label>
       <ion-select placeholder="Select type">
-        <ion-select-option *ngFor="let product of productTypes" value="{{product}}">
+        <ion-select-option
+          *ngFor="let product of productTypes"
+          value="{{product}}"
+        >
           {{"product.{{product}}" | translate}}
         </ion-select-option>
       </ion-select>
@@ -21,6 +24,5 @@
       <ion-label>Description</ion-label>
       <ion-textarea></ion-textarea>
     </ion-item>
-    
   </form>
 </ion-content>

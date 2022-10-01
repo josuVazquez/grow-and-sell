@@ -3,22 +3,21 @@ import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-upload',
-  templateUrl: './upload.component.html',
-  styleUrls: ['./upload.component.scss'],
+  templateUrl: './upload.page.html',
+  styleUrls: ['./upload.page.scss'],
 })
-export class UploadComponent implements OnInit {
+export class UploadPage implements OnInit {
   productTypes = [
     'vegetables',
     'fruits',
     'dairyProducts',
     'legumes',
     'tubers',
-    'eggs'
+    'eggs',
   ];
 
   uploadForm = new FormBuilder();
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {}
-
 }
