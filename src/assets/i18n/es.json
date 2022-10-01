@@ -4,7 +4,9 @@
       "PLACEHOLDER": "Soy el placeholder"
     },
     "ADD_PRODUCT": "Añadir producto",
-    "LOGIN": "Registrarse o Iniciar sesion"
+    "LOGIN": "Registrarse o Iniciar sesion",
+    "FAVORITES": "Favoritos",
+    "PROFILE": "Perfil"
   },
   "LOGIN": {
     "TITLE": "Bienvenido",
@@ -14,11 +16,11 @@
     }
   },
   "ProductTypes": {
-    "vegetables": "Verduras/Ortalizas",
+    "vegetables": "Verduras/Hortalizas",
     "fruits": "Frutas",
-    "dairyProducts": "Productos Lacteos",
+    "dairyProducts": "Productos Lácteos",
     "legumes": "Legumbres",
-    "tubers": "Tuberculos",
+    "tubers": "Tubérculos",
     "eggs": "Huevos"
   }
 }
