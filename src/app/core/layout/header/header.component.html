@@ -11,17 +11,17 @@
 
   <div class="right-div">
     <div class="logged" *ngIf="logged">
-      <div class="btn btn-clear" (click)="openFavorites()">
+      <div class="btn btn-clear" (click)="navigateTo('favorites')">
         <ion-icon name="heart-outline"></ion-icon>
         <p>{{ "HEADER.FAVORITES" | translate }}</p>
       </div>
 
-      <div class="btn btn-clear" (click)="openProfile()">
+      <div class="btn btn-clear" (click)="navigateTo('profile')">
         <ion-icon name="person-outline"></ion-icon>
         <p>{{ "HEADER.PROFILE" | translate }}</p>
       </div>
 
-      <div class="btn btn-primary" (click)="openLoginModal()">
+      <div class="btn btn-primary" (click)="navigateTo('upload')">
         <ion-icon name="add-circle-outline"></ion-icon>
         <p>{{ "HEADER.ADD_PRODUCT" | translate }}</p>
       </div>
@@ -33,7 +33,7 @@
         <p>{{ "HEADER.LOGIN" | translate }}</p>
       </div>
 
-      <div class="btn btn-primary" (click)="openLoginModal()">
+      <div class="btn btn-primary" (click)="navigateTo('upload')">
         <ion-icon name="add-circle-outline"></ion-icon>
         <p>{{ "HEADER.ADD_PRODUCT" | translate }}</p>
       </div>

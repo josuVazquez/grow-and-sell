@@ -40,15 +40,7 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['chat']);
   }
 
-  uploadProduct() {
-    this.router.navigate(['upload']);
-  }
-
-  openFavorites() {
-    this.router.navigate(['chat']);
-  }
-
-  openProfile() {
-    this.router.navigate(['chat']);
+  navigateTo(routing: string) {
+    this.router.navigate([routing]);
   }
 }
