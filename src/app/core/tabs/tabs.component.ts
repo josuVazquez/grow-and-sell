@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss'],
+  selector: 'app-tabs',
+  templateUrl: './tabs.component.html',
+  styleUrls: ['./tabs.component.scss'],
 })
-export class FooterComponent {
+export class TabsComponent {
   public tabs = [
     {
       id: 'home',
@@ -39,7 +39,6 @@ export class FooterComponent {
       redirect: 'profile',
     },
   ];
-
-  constructor() {}
+  constructor() { }
 
 }
