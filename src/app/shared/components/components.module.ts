@@ -6,8 +6,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicModule } from '@ionic/angular';
 import { InputComponent } from './input/input.component';
 import { LoginModalComponent } from './login-modal/login-modal.component';
+import { CurrencyDropDownComponent } from './currency-drop-down/currency-drop-down.component';
 
-const components = [InputComponent, LoginModalComponent];
+const components = [InputComponent, LoginModalComponent, CurrencyDropDownComponent];
 @NgModule({
   declarations: [...components],
   imports: [

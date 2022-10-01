@@ -1,3 +1,4 @@
+import { CurrencyPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
@@ -8,16 +9,16 @@ import { FormBuilder } from '@angular/forms';
 })
 export class UploadPage implements OnInit {
   productTypes = [
-    'vegetables',
-    'fruits',
-    'dairyProducts',
-    'legumes',
-    'tubers',
-    'eggs',
+    {value: 'vegetables', name: 'ProductTypes.vegetables'},
+    {value: 'fruits', name: 'ProductTypes.fruits'},
+    {value: 'dairyProducts', name: 'ProductTypes.dairyProducts'},
+    {value: 'legumes', name: 'ProductTypes.legumes'},
+    {value: 'tubers', name: 'ProductTypes.tubers'},
+    {value: 'eggs', name: 'ProductTypes.eggs'},
   ];
 
   uploadForm = new FormBuilder();
-  constructor() {}
+  constructor(private currencyPipe: CurrencyPipe) {}
 
   ngOnInit() {}
 }

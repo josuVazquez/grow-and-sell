@@ -11,47 +11,33 @@
 
   <div class="right-div">
     <div class="logged" *ngIf="logged">
-      <div
-        class="btn--no-ionic btn--no-ionic--clear"
-        (click)="navigateTo('favorites')"
-      >
+      <a class="a-btn btn--secondary button--hide-text" routerLink="favorites">
         <ion-icon name="heart-outline"></ion-icon>
-        <p>{{ "HEADER.FAVORITES" | translate }}</p>
-      </div>
+        <span>{{ "HEADER.FAVORITES" | translate }}</span>
+      </a>
 
-      <div
-        class="btn--no-ionic btn--no-ionic-clear"
-        (click)="navigateTo('profile')"
-      >
+      <a class="a-btn btn--secondary button--hide-text" routerLink="profile">
         <ion-icon name="person-outline"></ion-icon>
-        <p>{{ "HEADER.PROFILE" | translate }}</p>
-      </div>
+        <span>{{ "HEADER.PROFILE" | translate }}</span>
+      </a>
 
-      <div
-        class="btn--no-ionic btn--no-ionic--primary"
-        (click)="navigateTo('upload')"
-      >
+      <a class="a-btn btn--primary button--hide-text" routerLink="upload">
         <ion-icon name="add-circle-outline"></ion-icon>
-        <p>{{ "HEADER.ADD_PRODUCT" | translate }}</p>
-      </div>
+        <span>{{ "HEADER.ADD_PRODUCT" | translate }}</span>
+      </a>
     </div>
 
     <div class="logged" *ngIf="!logged">
-      <div
-        class="btn--no-ionic btn--no-ionic--secondary"
-        (click)="openLoginModal()"
-      >
+      <ion-button class="button--round button--hide-text"
+        (click)="openLoginModal()">
         <ion-icon name="person-circle-outline"></ion-icon>
-        <p>{{ "HEADER.LOGIN" | translate }}</p>
-      </div>
+        <span>{{ "HEADER.LOGIN" | translate }}</span>
+      </ion-button>
 
-      <div
-        class="btn--no-ionic btn--no-ionic--primary"
-        (click)="navigateTo('upload')"
-      >
+      <!-- <a class="a-btn btn--primary" routerLink="upload">
         <ion-icon name="add-circle-outline"></ion-icon>
-        <p>{{ "HEADER.ADD_PRODUCT" | translate }}</p>
-      </div>
+        <span>{{ "HEADER.ADD_PRODUCT" | translate }}</span>
+      </a> -->
     </div>
   </div>
 </div>

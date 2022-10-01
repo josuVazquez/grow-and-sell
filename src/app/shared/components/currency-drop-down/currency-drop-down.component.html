@@ -1,0 +1,7 @@
+<ion-list>
+  <ion-item>
+    <ion-select interface="popover" placeholder="Currency">
+      <ion-select-option *ngFor="let currency of currencyList" value="{{currency.code}}">{{currency.code}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-list>

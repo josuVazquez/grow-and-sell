@@ -1,14 +1,14 @@
 <ion-content>
-  <h3>INFORMATION ABOUT YOU ITEM</h3>
+  <h3 class="title">INFORMATION ABOUT YOU ITEM</h3>
   <form class="form">
     <ion-item>
       <ion-label>What type of fresh product are you selling?</ion-label>
       <ion-select placeholder="Select type">
         <ion-select-option
           *ngFor="let product of productTypes"
-          value="{{product}}"
+          value="{{product.value}}"
         >
-          {{"product.{{product}}" | translate}}
+          {{product.name | translate}}
         </ion-select-option>
       </ion-select>
     </ion-item>
@@ -18,7 +18,11 @@
     </ion-item>
     <ion-item>
       <ion-label>Price</ion-label>
-      <ion-input type="text" name="name"></ion-input>
+      <ion-input type="text" name="name">
+        <app-currency-drop-down>
+        </app-currency-drop-down>
+      </ion-input>
+
     </ion-item>
     <ion-item>
       <ion-label>Description</ion-label>

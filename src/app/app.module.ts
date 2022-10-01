@@ -17,6 +17,7 @@ import { environment } from 'src/environments/environment';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { ComponentsModule } from './shared/components/components.module';
 import { CoreModule } from './core/core.module';
 
 export const httpLoaderFactory = (http: HttpClient) =>
@@ -24,6 +25,7 @@ export const httpLoaderFactory = (http: HttpClient) =>
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    ComponentsModule,
     BrowserModule,
     HttpClientModule,
     CoreModule,

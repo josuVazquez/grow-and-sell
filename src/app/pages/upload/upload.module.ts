@@ -8,6 +8,7 @@ import { UploadPageRoutingModule } from './upload-routing.module';
 
 import { TranslateModule } from '@ngx-translate/core';
 import { UploadPage } from './upload.page';
+import { ComponentsModule } from 'src/app/shared/components/components.module';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { UploadPage } from './upload.page';
     IonicModule,
     UploadPageRoutingModule,
     TranslateModule,
+    ComponentsModule
   ],
   declarations: [UploadPage],
 })
