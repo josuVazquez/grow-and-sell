@@ -6,9 +6,15 @@ import { InputComponent } from './input/input.component';
 import { LoginModalComponent } from './login-modal/login-modal.component';
 import { CurrencyDropDownComponent } from './currency-drop-down/currency-drop-down.component';
 import { CommonModule, CurrencyPipe } from '@angular/common';
+import { CardComponent } from './card/card.component';
 import { FormsModule } from '@angular/forms';
 
-const components = [InputComponent, LoginModalComponent, CurrencyDropDownComponent];
+const components = [
+  InputComponent,
+  LoginModalComponent,
+  CurrencyDropDownComponent,
+  CardComponent,
+];
 @NgModule({
   declarations: [...components],
   imports: [
