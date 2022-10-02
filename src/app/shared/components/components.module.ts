@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 
 import { TranslateModule } from '@ngx-translate/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { IonicModule } from '@ionic/angular';
 import { InputComponent } from './input/input.component';
 import { LoginModalComponent } from './login-modal/login-modal.component';
 import { CurrencyDropDownComponent } from './currency-drop-down/currency-drop-down.component';
 import { CommonModule, CurrencyPipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 const components = [InputComponent, LoginModalComponent, CurrencyDropDownComponent];
 @NgModule({
@@ -14,6 +14,7 @@ const components = [InputComponent, LoginModalComponent, CurrencyDropDownCompone
   imports: [
     IonicModule,
     CommonModule,
+    FormsModule,
     TranslateModule.forChild({
       extend: true,
     }),

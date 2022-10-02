@@ -7,7 +7,7 @@ import { Component, OnInit, LOCALE_ID, Inject } from '@angular/core';
   styleUrls: ['./currency-drop-down.component.scss'],
 })
 export class CurrencyDropDownComponent implements OnInit{
-
+  selectedCurrency = 'USD';
   currencyList: Array<any> = [
     {code:'EUR', text:'€'},
     {code:'GBP', text:'£'},
@@ -18,8 +18,13 @@ export class CurrencyDropDownComponent implements OnInit{
 
   ngOnInit(): void {
     const localMoney = getLocaleCurrencyCode(this.locale);
+    this.selectedCurrency = localMoney;
     console.log(localMoney);
     // throw new Error('Method not implemented.');
+  }
+
+  updateCurrecy() {
+    console.log(this.selectedCurrency);
   }
 
 }
