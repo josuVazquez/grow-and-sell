@@ -1,7 +1,3 @@
-<ion-list>
-  <ion-item>
-    <ion-select interface="popover" placeholder="Currency">
-      <ion-select-option *ngFor="let currency of currencyList" value="{{currency.code}}">{{currency.code}}</ion-select-option>
-    </ion-select>
-  </ion-item>
-</ion-list>
+<ion-select interface="popover" placeholder="Currency" [(ngModel)]="selectedCurrency" (ngModelChange)="updateCurrecy()">
+  <ion-select-option *ngFor="let currency of currencyList" value="{{currency.code}}">{{currency.text}}</ion-select-option>
+</ion-select>

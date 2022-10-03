@@ -5,8 +5,9 @@ import { IonicModule } from '@ionic/angular';
 import { InputComponent } from './input/input.component';
 import { LoginModalComponent } from './login-modal/login-modal.component';
 import { CurrencyDropDownComponent } from './currency-drop-down/currency-drop-down.component';
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { CardComponent } from './card/card.component';
+import { FormsModule } from '@angular/forms';
 
 const components = [
   InputComponent,
@@ -19,10 +20,12 @@ const components = [
   imports: [
     IonicModule,
     CommonModule,
+    FormsModule,
     TranslateModule.forChild({
       extend: true,
     }),
   ],
   exports: [...components],
+  providers: [CurrencyPipe]
 })
 export class ComponentsModule {}

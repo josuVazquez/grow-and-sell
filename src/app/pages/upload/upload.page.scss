@@ -1,10 +1,35 @@
+@import "../../../theme/mixin.scss";
+
 .form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .title {
     font-weight: bold;
     color: var(--ion-color-primary);
     text-align: center;
+}
+
+.item {
+    width: 50%;
+    @include smartphone {
+        width: 100%;
+    }
+}
+
+.item--big {
+    width: 100%;
+}
+
+.footer-buttons {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
 }
