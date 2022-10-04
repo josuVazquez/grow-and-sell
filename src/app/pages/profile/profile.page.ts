@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from 'src/app/shared/services/firebase.service';
 import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
@@ -15,7 +16,10 @@ export class ProfilePage implements OnInit {
     rating: '3.0 / 5.0',
   };
 
-  constructor(private userService: UserService) {}
+  constructor(
+    private userService: UserService,
+    private firebaseService: FirebaseService
+  ) {}
 
   ngOnInit() {
     // faltaria un rating y un numero de telefono opcional (?)
@@ -27,5 +31,9 @@ export class ProfilePage implements OnInit {
         img: dt.photoURL,
       };
     });
+  }
+
+  logout() {
+    this.firebaseService.SignOut();
   }
 }
