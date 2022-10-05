@@ -1,10 +1,9 @@
 <ion-content [scrollY]="false">
   <header class="header__profile">
     <div class="circle"></div>
-
-    <ion-icon name="person-circle-outline"></ion-icon>
+    <ion-icon name="person-circle-outline" *ngIf="data.img === ''"></ion-icon>
+    <img *ngIf="data.img !== ''" src="{{data.img}}" alt="" srcset="" />
   </header>
-
   <div class="pages">
     <ion-list>
       <ion-item lines="full">
@@ -25,6 +24,6 @@
         <ion-label>{{data.rating}}</ion-label>
       </ion-item>
     </ion-list>
-    <ion-button class="button--round">Editar</ion-button>
+    <ion-button class="button--round" (click)="logout()">Logout</ion-button>
   </div>
 </ion-content>

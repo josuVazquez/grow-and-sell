@@ -17,11 +17,16 @@ ion-content {
     background: var(--ion-color-primary);
     border-radius: 50%;
   }
-  ion-icon {
+  ion-icon,
+  img {
     font-size: 116px;
     margin-top: 130px;
     background-color: var(--ion-background-color);
     border-radius: 50%;
+  }
+
+  img {
+    z-index: 1;
   }
 }
 
