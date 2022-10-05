@@ -1,12 +1,15 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { GoogleMap } from '@angular/google-maps';
 
 @Component({
   selector: 'app-change-location',
   templateUrl: './change-location.component.html',
   styleUrls: ['./change-location.component.scss'],
 })
-export class ChangeLocationComponent implements OnInit {
+export class ChangeLocationComponent implements OnInit, AfterViewInit {
   @Input() currentLocation;
+  @ViewChild('mapSearchField') searchField: ElementRef;
+  @ViewChild(GoogleMap) map: GoogleMap;
   marker;
   center: google.maps.LatLngLiteral;
 
@@ -24,13 +27,47 @@ export class ChangeLocationComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.setMarker(this.currentLocation.coords);
+    this.center = this.currentLocation.coords;
+  }
+
+  setMarker(coords) {
     this.marker = {
-      position: this.currentLocation.coords,
+      position: coords,
       label: {
         color: 'red',
       }
     };
-    this.center = this.currentLocation.coords;
   }
 
+  ngAfterViewInit(): void {
+    this.setInputSearch();
+  }
+
+  setInputSearch() {
+    const searchBox = new google.maps.places.SearchBox(
+      this.searchField.nativeElement
+    );
+
+    searchBox.addListener('places_changed', () => {
+      const places = searchBox.getPlaces();
+      if(places.length === 0) {
+        return;
+      }
+      const bounds = new google.maps.LatLngBounds();
+      console.log(bounds);
+      places.forEach(place => {
+        if(!place.geometry || !place.geometry.location) {
+          return;
+        }
+        if(place.geometry.viewport) {
+          bounds.union(place.geometry.viewport);
+        } else {
+          bounds.extend(place.geometry.location);
+        }
+        this.setMarker(place.geometry.location);
+      });
+      this.map.fitBounds(bounds);
+    });
+  }
 }
