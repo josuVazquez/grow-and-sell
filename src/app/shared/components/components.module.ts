@@ -8,16 +8,22 @@ import { CurrencyDropDownComponent } from './currency-drop-down/currency-drop-do
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { CardComponent } from './card/card.component';
 import { FormsModule } from '@angular/forms';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { MapComponent } from './map/map.component';
+import { ChangeLocationComponent } from './change-location/change-location.component';
 
 const components = [
   InputComponent,
   LoginModalComponent,
   CurrencyDropDownComponent,
   CardComponent,
+  MapComponent,
+  ChangeLocationComponent
 ];
 @NgModule({
   declarations: [...components],
   imports: [
+    GoogleMapsModule,
     IonicModule,
     CommonModule,
     FormsModule,

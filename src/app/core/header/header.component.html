@@ -11,17 +11,17 @@
 
   <div class="right-div">
     <div class="logged" *ngIf="logged">
-      <a class="a-btn btn--secondary button--hide-text" routerLink="favorites">
+      <a class="a-btn btn--secondary button--hide-text" routerLink="/favorites" >
         <ion-icon name="heart-outline"></ion-icon>
         <span>{{ "HEADER.FAVORITES" | translate }}</span>
       </a>
 
-      <a class="a-btn btn--secondary button--hide-text" routerLink="profile">
+      <a class="a-btn btn--secondary button--hide-text" routerLink="/profile">
         <ion-icon name="person-outline"></ion-icon>
         <span>{{ "HEADER.PROFILE" | translate }}</span>
       </a>
 
-      <a class="a-btn btn--primary button--hide-text" routerLink="upload">
+      <a class="a-btn btn--primary button--hide-text" routerLink="/upload">
         <ion-icon name="add-circle-outline"></ion-icon>
         <span>{{ "HEADER.ADD_PRODUCT" | translate }}</span>
       </a>

@@ -127,10 +127,22 @@
   --max-height: 450px;
 }
 
+.modal--small {
+  --max-width: 90%;
+  --border-radius: 10px;
+  --max-height: 450px;
+}
+
 .tabs-inner:first-child {
   margin-top: 65px;
 }
 
 .ion-input--text-right {
   text-align: end;
+}
+
+.title {
+  font-weight: bold;
+  color: var(--ion-color-primary);
+  text-align: center;
 }

@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { IonicModule } from '@ionic/angular';
 import { ComponentsModule } from '../shared/components/components.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -14,7 +15,8 @@ import { ComponentsModule } from '../shared/components/components.module';
     CommonModule,
     TranslateModule,
     IonicModule,
-    ComponentsModule
+    ComponentsModule,
+    RouterModule
   ],
   exports: [TabsComponent, HeaderComponent]
 })
