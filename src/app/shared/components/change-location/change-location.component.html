@@ -5,7 +5,7 @@ class="map"
   [options]="options">
   <div class="form-div">
     <input #mapSearchField class="input__location" [value]="currentLocation.streetName" />
-    <ion-button>Save</ion-button>
+    <ion-button (click)="updateLocation()">Save</ion-button>
   </div>
   <map-marker
       *ngIf="marker"

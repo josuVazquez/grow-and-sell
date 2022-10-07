@@ -1,5 +1,7 @@
 import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { GoogleMap } from '@angular/google-maps';
+import { ModalController } from '@ionic/angular';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-change-location',
@@ -24,7 +26,7 @@ export class ChangeLocationComponent implements OnInit, AfterViewInit {
     clickableIcons: false
   };
 
-  constructor() { }
+  constructor(private userService: UserService, private modalCtrl: ModalController) { }
 
   ngOnInit() {
     this.setMarker(this.currentLocation.coords);
@@ -44,6 +46,12 @@ export class ChangeLocationComponent implements OnInit, AfterViewInit {
     this.setInputSearch();
   }
 
+  updateLocation() {
+    console.log(this.center)
+    this.userService.updateUser( {location: this.center} );
+    this.modalCtrl.dismiss();
+  }
+
   setInputSearch() {
     const searchBox = new google.maps.places.SearchBox(
       this.searchField.nativeElement
@@ -55,7 +63,6 @@ export class ChangeLocationComponent implements OnInit, AfterViewInit {
         return;
       }
       const bounds = new google.maps.LatLngBounds();
-      console.log(bounds);
       places.forEach(place => {
         if(!place.geometry || !place.geometry.location) {
           return;
