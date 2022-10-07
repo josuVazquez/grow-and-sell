@@ -8,8 +8,10 @@ import { FirebaseService } from '../../services/firebase.service';
   styleUrls: ['./login-modal.component.scss'],
 })
 export class LoginModalComponent implements OnInit {
-
-  constructor(private modalCtrl: ModalController, private firebaseService: FirebaseService) { }
+  constructor(
+    private modalCtrl: ModalController,
+    private firebaseService: FirebaseService
+  ) {}
 
   ngOnInit() {}
 
@@ -19,5 +21,6 @@ export class LoginModalComponent implements OnInit {
 
   loginGoogle() {
     this.firebaseService.GoogleAuth();
+    this.close();
   }
 }

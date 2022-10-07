@@ -1,12 +1,14 @@
 export const environment = {
   production: true,
   firebaseConfig: {
-    apiKey: 'AIzaSyC0oj9Ve1mDVlOrLiwIuCc34A-IARo7TiQ',
-    authDomain: 'growandsell-41325.firebaseapp.com',
-    projectId: 'growandsell-41325',
-    storageBucket: 'growandsell-41325.appspot.com',
-    messagingSenderId: '739998004270',
-    appId: '1:739998004270:web:7bea76ddb894764a8c9bbf',
-    measurementId: 'G-KJN1D2DNB5'
-  }
+    apiKey: 'AIzaSyAu8Jn7qqvDJ-maPqZX40NzdlAEZMwPblc',
+    authDomain: 'growandsell-63435.firebaseapp.com',
+    projectId: 'growandsell-63435',
+    storageBucket: 'growandsell-63435.appspot.com',
+    messagingSenderId: '203491001692',
+    appId: '1:203491001692:web:daab313b7fa1bd332fad99',
+    measurementId: 'G-DVNYKJH12P'
+  },
+  mapsAPI: 'AIzaSyDiiKuS3frUyj0QlmPtbebje96SSM4cRX8',
+  backUrl: 'https://grow-and-sell-back.herokuapp.com/'
 };

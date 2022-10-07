@@ -1,32 +1,34 @@
 import { Injectable, NgZone } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import {
-  AngularFirestore, AngularFirestoreDocument,
+  AngularFirestore,
+  AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import * as auth from 'firebase/auth';
+import { User } from '../models/user.model';
+import { UserService } from './user.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FirebaseService {
-  userData: any;
-
   constructor(
     public afStore: AngularFirestore,
     public ngFireAuth: AngularFireAuth,
-    private router: Router,
-    private ngZone: NgZone) {
-    this.ngFireAuth.authState.subscribe((user) => {
-      if (user) {
-        this.userData = user;
-        localStorage.setItem('user', JSON.stringify(this.userData));
-        JSON.parse(localStorage.getItem('user'));
-      } else {
-        localStorage.setItem('user', null);
-        JSON.parse(localStorage.getItem('user'));
-      }
-    });
+    private userService: UserService,
+    private router: Router) {
+  }
+
+  async setUser(user: any) {
+    localStorage.setItem('user', JSON.stringify(user || {}));
+    this.userService.setUser(new User(user));
+    if(!user) {
+      return;
+    }
+    const token = await user?.getIdToken();
+    localStorage.setItem('token', token);
+    this.userService.createUser(new User(user));
   }
 
   SignIn(email, password) {
@@ -58,16 +60,6 @@ export class FirebaseService {
       });
   }
 
-  get isLoggedIn(): boolean {
-    const user = JSON.parse(localStorage.getItem('user'));
-    return user !== null && user.emailVerified !== false ? true : false;
-  }
-
-  get isEmailVerified(): boolean {
-    const user = JSON.parse(localStorage.getItem('user'));
-    return user.emailVerified !== false ? true : false;
-  }
-
   GoogleAuth() {
     return this.AuthLogin(new auth.GoogleAuthProvider());
   }
@@ -76,12 +68,17 @@ export class FirebaseService {
     return this.ngFireAuth
       .signInWithPopup(provider)
       .then((result) => {
-        this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
+        this.SetUserData({
+          uid: result.user.uid,
+          email: result.user.email,
+          displayName: result.user.displayName,
+          photoURL: result.user.photoURL,
+          emailVerified: result.user.emailVerified,
+          ...result.credential,
         });
-        this.SetUserData(result.user);
       })
       .catch((error) => {
+        console.log(error);
         window.alert(error);
       });
   }
@@ -90,22 +87,22 @@ export class FirebaseService {
     const userRef: AngularFirestoreDocument<any> = this.afStore.doc(
       `users/${user.uid}`
     );
-    const userData = {
-      uid: user.uid,
-      email: user.email,
-      displayName: user.displayName,
-      photoURL: user.photoURL,
-      emailVerified: user.emailVerified,
-    };
-    return userRef.set(userData, {
+    this.setUser(user);
+    return userRef.set(user, {
       merge: true,
     });
   }
 
   SignOut() {
+    this.userService.deleteUserData();
     return this.ngFireAuth.signOut().then(() => {
-      localStorage.removeItem('user');
-      this.router.navigate(['login']);
+      this.router.navigate(['home']);
+    });
+  }
+
+  tryToReload() {
+    this.ngFireAuth.authState.subscribe((user) => {
+      this.setUser(user);
     });
   }
 }

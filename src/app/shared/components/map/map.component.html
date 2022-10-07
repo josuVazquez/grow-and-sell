@@ -1,0 +1,18 @@
+<div class="map__card">
+  <h3 class="title">TUS PRODUCTOS SE VERAN EN:</h3>
+  <ion-input class="input__location" (click)="openChangeLocationModal()" [value]="streetName" readonly ></ion-input>
+  <google-map width="100%"
+  class="map" 
+  [center]="center"
+  [options]="options">
+  <map-marker
+      *ngIf="marker"
+      [position]="marker.position"
+      [label]="marker.label"
+      [title]="marker.title"
+      [options]="marker.options"
+    >
+  </map-marker>
+  </google-map>
+  <span>Este es el punto en el que se veran tus productos</span>
+</div>

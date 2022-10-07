@@ -1,0 +1,18 @@
+
+<google-map width="100%"
+class="map" 
+  [center]="center"
+  [options]="options">
+  <div class="form-div">
+    <input #mapSearchField class="input__location" [value]="currentLocation.streetName" />
+    <ion-button (click)="updateLocation()">Save</ion-button>
+  </div>
+  <map-marker
+      *ngIf="marker"
+      [position]="marker.position"
+      [label]="marker.label"
+      [title]="marker.title"
+      [options]="marker.options"
+    >
+  </map-marker>
+</google-map>

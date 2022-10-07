@@ -10,14 +10,14 @@ import { AuthInterceptor } from './shared/interceptors/auth.interceptor';
 import { ErrorInterceptor } from './shared/interceptors/error.interceptor';
 import { SpinnerInterceptor } from './shared/interceptors/spinner.interceptor';
 import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { LayoutModule } from './core/layout/layout.module';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
 import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth'
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { CoreModule } from './core/core.module';
 
 export const httpLoaderFactory = (http: HttpClient) =>
   new TranslateHttpLoader(http);
@@ -26,6 +26,7 @@ export const httpLoaderFactory = (http: HttpClient) =>
   imports: [
     BrowserModule,
     HttpClientModule,
+    CoreModule,
     IonicModule.forRoot(),
     TranslateModule.forRoot({
       defaultLanguage: 'es',
@@ -36,7 +37,6 @@ export const httpLoaderFactory = (http: HttpClient) =>
       },
     }),
     AppRoutingModule,
-    LayoutModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
   ],

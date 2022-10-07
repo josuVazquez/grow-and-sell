@@ -1,0 +1,38 @@
+<div class="header">
+  <ion-button shape="round" (click)="clickHome()" fill="clear">
+    <ion-icon slot="icon-only" name="home"></ion-icon>
+  </ion-button>
+
+  <app-input
+    [name]="'search-outline'"
+    [placeholder]="'HEADER.INPUT.PLACEHOLDER'"
+    class="input"
+  ></app-input>
+
+  <div class="right-div">
+    <div class="logged" *ngIf="logged">
+      <a class="a-btn btn--secondary button--hide-text" routerLink="/favorites" >
+        <ion-icon name="heart-outline"></ion-icon>
+        <span>{{ "HEADER.FAVORITES" | translate }}</span>
+      </a>
+
+      <a class="a-btn btn--secondary button--hide-text" routerLink="/profile">
+        <ion-icon name="person-outline"></ion-icon>
+        <span>{{ "HEADER.PROFILE" | translate }}</span>
+      </a>
+
+      <a class="a-btn btn--primary button--hide-text" routerLink="/upload">
+        <ion-icon name="add-circle-outline"></ion-icon>
+        <span>{{ "HEADER.ADD_PRODUCT" | translate }}</span>
+      </a>
+    </div>
+
+    <div class="logged" *ngIf="!logged">
+      <ion-button class="button--round button--hide-text"
+        (click)="openLoginModal()">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <span>{{ "HEADER.LOGIN" | translate }}</span>
+      </ion-button>
+    </div>
+  </div>
+</div>

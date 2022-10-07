@@ -1,0 +1,29 @@
+@import "../../../theme/mixin.scss";
+
+.form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    width: 50%;
+    @include smartphone {
+        width: 100%;
+    }
+}
+
+.item--big {
+    width: 100%;
+}
+
+.footer-buttons {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+}

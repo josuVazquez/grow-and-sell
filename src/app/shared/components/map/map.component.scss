@@ -1,0 +1,17 @@
+.input__location {
+    width: 100%;
+    background-color: white;
+    border: 1px solid var(--ion-color-primary);
+    border-radius: 4px;
+}
+
+.map__card {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.map {
+    border-radius: 4px;
+}

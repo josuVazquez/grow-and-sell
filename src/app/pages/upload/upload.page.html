@@ -1,0 +1,51 @@
+<ion-content>
+  <h3 class="title">INFORMATION ABOUT YOU ITEM</h3>
+  <form class="form">
+    <ion-item class="item">
+      <ion-label>What type of fresh product are you selling?</ion-label>
+      <ion-select placeholder="Select type" interface="popover" >
+        <ion-select-option
+          *ngFor="let product of productTypes"
+          value="{{product.value}}"
+        >
+          {{product.name | translate}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class="item">
+      <ion-label>What is the name?</ion-label>
+      <ion-input type="text" name="name"></ion-input>
+    </ion-item>
+    <ion-item class="item">
+      <ion-label>Price</ion-label>
+      <ion-input type="text" name="name" class="ion-input--text-right">
+      </ion-input>
+    </ion-item>
+    <ion-item class="item">
+      <ion-label>Moneda</ion-label>
+      <app-currency-drop-down>
+      </app-currency-drop-down>
+    </ion-item>
+    <ion-item class="item--big">
+      <ion-label>Description</ion-label>
+      <ion-textarea></ion-textarea>
+    </ion-item>
+  </form>
+  <h3 class="title">UPLOAD A PHOTO</h3>
+  <div class="fotos">
+
+  </div>
+  <app-map></app-map>
+  <!-- <h3 class="title">TUS PRODUCTOS SE VERAN EN :</h3>
+  <div class="map">
+  </div> -->
+
+  <ion-footer class="footer-buttons">
+    <ion-button class="button--round">
+      Upload Product
+    </ion-button>
+    <ion-button class="button--round">
+      Cancel
+    </ion-button>
+  </ion-footer>
+</ion-content>

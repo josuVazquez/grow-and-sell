@@ -1,14 +1,25 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
-import { UploadRoutingModule } from './upload-routing.module';
+import { IonicModule } from '@ionic/angular';
 
+import { UploadPageRoutingModule } from './upload-routing.module';
+
+import { TranslateModule } from '@ngx-translate/core';
+import { UploadPage } from './upload.page';
+import { ComponentsModule } from 'src/app/shared/components/components.module';
 
 @NgModule({
-  declarations: [],
   imports: [
     CommonModule,
-    UploadRoutingModule
-  ]
+    FormsModule,
+    IonicModule,
+    UploadPageRoutingModule,
+    TranslateModule.forChild(),
+    ComponentsModule
+  ],
+  declarations: [UploadPage],
+  providers: [CurrencyPipe]
 })
-export class UploadModule { }
+export class UploadPageModule {}

@@ -1,5 +1,24 @@
 {
   "HEADER": {
     "PRUEBA": "Hello"
+  },
+  "ProductTypes": {
+    "vegetables": "Vegetables",
+    "fruits": "Fruits",
+    "dairyProducts": "Dairy Products",
+    "legumes": "Legumes",
+    "tubers": "Tubers",
+    "eggs": "Eggs"
+  },
+
+  "INPUT": {
+    "PLACEHOLDER": "Soy el placeholder"
+  },
+  "ADD_PRODUCT": "Añadir producto",
+  "LOGIN": {
+    "PLACEHOLDER": {
+      "USERNAME": "Inserte el usuario",
+      "PASSWORD": "Inserte la contraseña"
+    }
   }
 }
