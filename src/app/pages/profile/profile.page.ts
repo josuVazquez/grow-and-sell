@@ -26,7 +26,7 @@ export class ProfilePage implements OnInit {
     this.userService._getUser().subscribe((dt) => {
       this.data = {
         ...this.data,
-        name: dt.displayName,
+        name: dt.name,
         email: dt.email,
         img: dt.photoURL,
       };

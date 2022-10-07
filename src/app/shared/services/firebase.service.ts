@@ -9,8 +9,6 @@ import * as auth from 'firebase/auth';
 import { User } from '../models/user.model';
 import { UserService } from './user.service';
 
-import { JwtHelperService } from '@auth0/angular-jwt';
-const helper = new JwtHelperService();
 @Injectable({
   providedIn: 'root',
 })
@@ -19,18 +17,18 @@ export class FirebaseService {
     public afStore: AngularFirestore,
     public ngFireAuth: AngularFireAuth,
     private userService: UserService,
-    private router: Router
-  ) {
-    // this.ngFireAuth.authState.subscribe((user) => {
-    //   this.setUser(user ? new User({...user}) : null)
-    // });
+    private router: Router) {
   }
 
-  setUser(user: User) {
-    console.log('setting');
-    console.log(user);
+  async setUser(user: any) {
     localStorage.setItem('user', JSON.stringify(user || {}));
-    this.userService.setUser(user);
+    this.userService.setUser(new User(user));
+    if(!user) {
+      return;
+    }
+    const token = await user?.getIdToken();
+    localStorage.setItem('token', token);
+    this.userService.createUser(new User(user));
   }
 
   SignIn(email, password) {
@@ -86,13 +84,11 @@ export class FirebaseService {
   }
 
   SetUserData(user) {
-    console.log(user);
     const userRef: AngularFirestoreDocument<any> = this.afStore.doc(
       `users/${user.uid}`
     );
-    const us = new User({ ...user });
-    this.setUser(us);
-    return userRef.set(us.toObject(), {
+    this.setUser(user);
+    return userRef.set(user, {
       merge: true,
     });
   }
@@ -105,9 +101,8 @@ export class FirebaseService {
   }
 
   tryToReload() {
-    const user = JSON.parse(localStorage.getItem('user'));
-    if (user && user.idToken && !helper.isTokenExpired(user.idToken)) {
-      this.setUser({ ...user });
-    }
+    this.ngFireAuth.authState.subscribe((user) => {
+      this.setUser(user);
+    });
   }
 }

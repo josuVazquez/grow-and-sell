@@ -20,6 +20,7 @@ export class ErrorInterceptor implements HttpInterceptor {
     catchError((error) => {
       if(error.status === 401) {
         localStorage.setItem('token','');
+        localStorage.setItem('user','');
         this.alert.error('User not authorized');
         this.route.navigate(['login']);
         return throwError(() => new Error(`Unauthorized call`));

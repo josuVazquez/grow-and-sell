@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService._getUser().subscribe((userData) => {
-      this.logged = !!userData?.idToken;
+      this.logged = !!userData;
     });
   }
 

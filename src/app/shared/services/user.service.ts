@@ -34,4 +34,8 @@ export class UserService {
   updateUser(user) {
     return this.httpClient.put(`${environment.backUrl}user`, user).subscribe(res => console.log(res));
   }
+  
+  createUser(user) {
+    return this.httpClient.post(`${environment.backUrl}user`, user).subscribe(res => console.log(res));
+  }
 }
