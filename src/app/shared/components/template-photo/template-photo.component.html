@@ -1,0 +1,16 @@
+<div class="square">
+  <img *ngIf="img" [src]="img" />
+
+  <ion-item *ngIf="!img">
+    <label for="myFileInput">
+      <ion-icon name="image-outline" class="product-photo"></ion-icon>
+    </label>
+
+    <input
+      type="file"
+      (change)="showPreview($event)"
+      id="myFileInput"
+      accept="image/png, image/jpeg"
+    />
+  </ion-item>
+</div>
