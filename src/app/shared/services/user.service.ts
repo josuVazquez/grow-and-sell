@@ -22,20 +22,20 @@ export class UserService {
     return this.userSubject.asObservable();
   }
 
-  getUser() {
-    return this.userSubject.getValue();
-  }
-
   deleteUserData() {
     this.userSubject.next(this.emptyObject);
     this.localStorage.removeData('user');
   }
 
   updateUser(user) {
-    return this.httpClient.put(`${environment.backUrl}user`, user).subscribe(res => console.log(res));
+    return this.httpClient.put(`${environment.backUrl}user`, user).toPromise();
   }
   
+  getUser() {
+    return this.httpClient.get(`${environment.backUrl}user`).toPromise();
+  }
+
   createUser(user) {
-    return this.httpClient.post(`${environment.backUrl}user`, user).subscribe(res => console.log(res));
+    return this.httpClient.post(`${environment.backUrl}user`, user).toPromise();
   }
 }

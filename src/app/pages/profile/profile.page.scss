@@ -2,7 +2,7 @@ ion-content {
   overflow: hidden;
 }
 
-.header__profile {
+.profile__header {
   display: flex;
   justify-content: center;
   overflow: hidden;
@@ -30,7 +30,7 @@ ion-content {
   }
 }
 
-.pages {
+.profile__info {
   height: 70%;
   display: flex;
   flex-direction: column;

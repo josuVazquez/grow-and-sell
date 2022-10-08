@@ -8,29 +8,29 @@ import { UserService } from 'src/app/shared/services/user.service';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
-  data = {
-    img: '',
-    name: 'Nombre Apellido Apellido',
-    email: 'example@example.com',
-    phone: '+34 12393123',
-    rating: '3.0 / 5.0',
-  };
+  // data = {
+  //   img: '',
+  //   name: 'Nombre Apellido Apellido',
+  //   email: 'example@example.com',
+  //   phone: '+34 12393123',
+  //   rating: '3.0 / 5.0',
+  // };
 
   constructor(
-    private userService: UserService,
+    public userService: UserService,
     private firebaseService: FirebaseService
   ) {}
 
   ngOnInit() {
     // faltaria un rating y un numero de telefono opcional (?)
-    this.userService._getUser().subscribe((dt) => {
-      this.data = {
-        ...this.data,
-        name: dt.name,
-        email: dt.email,
-        img: dt.photoURL,
-      };
-    });
+    // this.userService._getUser().subscribe((dt) => {
+    //   this.data = {
+    //     ...this.data,
+    //     name: dt.name,
+    //     email: dt.email,
+    //     img: dt.photoURL,
+    //   };
+    // });
   }
 
   logout() {

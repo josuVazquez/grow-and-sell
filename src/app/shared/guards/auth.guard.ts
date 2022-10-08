@@ -16,7 +16,8 @@ export class AuthGuard implements CanActivate {
 
   canActivate(): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     const token = localStorage.getItem('token');
-    const activated = !token || !helper.isTokenExpired(token);
+    console.log(token)
+    const activated = !!token || !helper.isTokenExpired(token);
     if(!activated) {
       this.openModal();
     }
