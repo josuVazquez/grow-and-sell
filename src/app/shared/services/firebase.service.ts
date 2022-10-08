@@ -22,7 +22,7 @@ export class FirebaseService {
 
   async setUser(user: any) {
     localStorage.setItem('user', JSON.stringify(user || {}));
-    this.userService.setUser(new User(user));
+    this.userService.setUser(user ? new User(user) : null);
     if(!user) {
       return;
     }
