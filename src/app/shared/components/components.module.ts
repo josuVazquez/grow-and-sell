@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { MapComponent } from './map/map.component';
 import { ChangeLocationComponent } from './change-location/change-location.component';
+import { UpdaterPhotoComponent } from './updater-photo/updater-photo.component';
+import { TemplatePhotoComponent } from './template-photo/template-photo.component';
 
 const components = [
   InputComponent,
@@ -18,7 +20,9 @@ const components = [
   CurrencyDropDownComponent,
   CardComponent,
   MapComponent,
-  ChangeLocationComponent
+  ChangeLocationComponent,
+  UpdaterPhotoComponent,
+  TemplatePhotoComponent,
 ];
 @NgModule({
   declarations: [...components],
@@ -32,6 +36,6 @@ const components = [
     }),
   ],
   exports: [...components],
-  providers: [CurrencyPipe]
+  providers: [CurrencyPipe],
 })
 export class ComponentsModule {}

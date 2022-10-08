@@ -1,0 +1,7 @@
+<div class="container--photos">
+  <app-template-photo
+    *ngFor="let template of arrayItems; let i = index"
+    (click)="clickedPhoto(i)"
+  >
+  </app-template-photo>
+</div>

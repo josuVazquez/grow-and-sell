@@ -1,0 +1,14 @@
+.container--photos {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px 8px;
+
+  background-color: white;
+  border-radius: 10px 10px 10px 10px;
+  padding: 10px;
+
+  .app-template-photo {
+    flex: 1 1 20%;
+  }
+}
