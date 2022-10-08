@@ -147,3 +147,14 @@
   color: var(--ion-color-primary);
   text-align: center;
 }
+
+ion-content {
+  @include desktop {
+    --padding-start: 20%;
+    --padding-end: 20%;
+  }
+  @include tablet {
+    --padding-start: 10%;
+    --padding-end: 10%;
+  }
+}
