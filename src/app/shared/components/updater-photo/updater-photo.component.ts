@@ -5,27 +5,43 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './updater-photo.component.html',
   styleUrls: ['./updater-photo.component.scss'],
 })
-export class UpdaterPhotoComponent implements OnInit {
-  maxItems: 10;
+export class UpdaterPhotoComponent {
+  // maxItems: 10;
   arrayItems = new Array(10);
-  item: {
-    img: '';
-  };
+
+  // item: {
+  //   img: '';
+  // };
 
   constructor() {
-    console.log(this.arrayItems);
   }
 
-  ngOnInit() {}
-
-  clickedPhoto(index: number) {
-    console.log(index);
+  changedImg(url, index) {
+    if(url) {
+      this.pushImageToLastPosition(url);
+    } else {
+      this.arrayItems[index] = null;
+      this.reorderArrayWhenDelete();
+    }
   }
 
-  private onSucess() {
-    // this.selectedFile.pending = false;
-    // this.selectedFile.status = 'ok';
+  pushImageToLastPosition(url) {
+    for(let index = 0; index < this.arrayItems.length; index++) {
+      if(!this.arrayItems[index]) {
+        this.arrayItems[index] = url;
+        index = this.arrayItems.length;
+      }
+    }
   }
 
-  private onError() {}
+  reorderArrayWhenDelete() {
+    let firstNullFound = false;
+    for(let index = 0; index < this.arrayItems.length - 1; index++) {
+      if(!this.arrayItems[index] || firstNullFound) {
+        firstNullFound = true;
+        this.arrayItems[index] = this.arrayItems[index + 1];
+      }
+    }
+    this.arrayItems[this.arrayItems.length - 1] = null;
+  }
 }
