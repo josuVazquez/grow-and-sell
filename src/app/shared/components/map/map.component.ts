@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { Subscription } from 'rxjs';
+import { UserService } from '../../services/user.service';
 import { ChangeLocationComponent } from '../change-location/change-location.component';
 
 @Component({
@@ -7,7 +9,7 @@ import { ChangeLocationComponent } from '../change-location/change-location.comp
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss'],
 })
-export class MapComponent implements OnInit {
+export class MapComponent implements OnInit, OnDestroy {
   marker;
   center: google.maps.LatLngLiteral;
   streetName = '';
@@ -24,32 +26,56 @@ export class MapComponent implements OnInit {
   };
   geocoder = new google.maps.Geocoder();
 
-  constructor(private modalController: ModalController) {
+  _getUser: Subscription;
+
+  constructor(private modalController: ModalController, private userService: UserService) {
   }
 
   ngOnInit() {
-    navigator.geolocation.getCurrentPosition((position) => {
-      console.log(position);
-      this.center = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
-      };
-      this.marker = {
-        position: {
-          lat: this.center.lat,
-          lng: this.center.lng,
-        },
-        label: {
-          color: 'red',
-        }
-      };
-      this.getStreet(this.center);
+    this.loadUserLocation()
+  }
+
+  async loadUserLocation() {
+    this._getUser = this.userService._getUser().subscribe(user => {
+      if(user.lat && user.lng) {
+        const position = { coords: { latitude: user.lat, longitude: user.lng }}
+        this.loadUserInfoIntoMap(position);
+      } else {
+        this.getCurrentLocation((position) => { this.loadUserInfoIntoMap(position); });
+      }
     });
   }
 
-  getStreet(latlng) {
+  ngOnDestroy() {
+    this._getUser.unsubscribe();
+  }
+
+  loadUserInfoIntoMap(position) {
+    const latLng = {
+      lat: position.coords.latitude,
+      lng: position.coords.longitude
+    };
+    this.setMapData(latLng)
+    this.getStreet(latLng);
+  }
+
+  getCurrentLocation(loadUserInfo) {
+    navigator.geolocation.getCurrentPosition(loadUserInfo);
+  }
+
+  setMapData(latLng) {
+    this.center = latLng;
+    this.marker = {
+      position: latLng,
+      label: {
+        color: 'red',
+      }
+    };
+  }
+
+  getStreet(latLng) {
     this.geocoder
-    .geocode({ location: latlng })
+    .geocode({ location: latLng })
     .then((response) => {
       const address = response.results[0].address_components;
       this.streetName = `${address[address.length - 1]?.long_name}, ${address[address.length - 5]?.long_name}`;

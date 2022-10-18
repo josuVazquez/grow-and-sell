@@ -108,6 +108,7 @@ export class FirebaseService {
     this.ngFireAuth.authState.subscribe(async(user) => {
       await this.setUser(user);
       const ourUser = await this.userService.getUser();
+      console.log(ourUser)
       this.userService.setUser(new User(ourUser));
     });
   }

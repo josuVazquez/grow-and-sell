@@ -5,6 +5,8 @@ export class User {
     photoURL: string;
     phone: string;
     rating: number;
+    lat: string;
+    lng: string;
 
     constructor(data: Partial<User | any> = {}) {
         this.uid = data.uid;
@@ -13,5 +15,7 @@ export class User {
         this.phone = data.phone;
         this.rating = data.rating;
         this.photoURL = data.photoURL;
+        this.lat = data.lat;
+        this.lng = data.lng;
     }
 }

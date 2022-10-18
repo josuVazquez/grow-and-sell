@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { User } from '../models/user.model';
 import { LocalStorageService } from './local-storage.service';
@@ -14,11 +14,11 @@ export class UserService {
 
   constructor(private localStorage: LocalStorageService, private httpClient: HttpClient) {}
 
-  setUser(user: User) {
+  setUser(user: User){
     this.userSubject.next(user);
   }
 
-  _getUser() {
+  _getUser(): Observable<User>{
     return this.userSubject.asObservable();
   }
 
@@ -27,15 +27,15 @@ export class UserService {
     this.localStorage.removeData('user');
   }
 
-  updateUser(user) {
+  updateUser(user: Partial<User>): Promise<any> {
     return this.httpClient.put(`${environment.backUrl}user`, user).toPromise();
   }
   
-  getUser() {
+  getUser(): Promise<any> {
     return this.httpClient.get(`${environment.backUrl}user`).toPromise();
   }
 
-  createUser(user) {
+  createUser(user: User): Promise<any> {
     return this.httpClient.post(`${environment.backUrl}user`, user).toPromise();
   }
 }
