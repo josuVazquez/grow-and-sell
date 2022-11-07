@@ -1,12 +1,4 @@
-
 <ion-content>
   <h1>Favorites</h1>
-  <app-card
-    *ngFor="let item of cardExample"
-    [img]="item.img"
-    [title]="item.title"
-    [subtitle]="item.subtitle"
-    [description]="item.description"
-  >
-  </app-card>
+  <app-card *ngFor="let item of cardExample" [data]="item"> > </app-card>
 </ion-content>

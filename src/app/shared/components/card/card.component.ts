@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Product } from '../../models/product';
 
 @Component({
   selector: 'app-card',
@@ -6,14 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent implements OnInit {
-  @Input() img: string;
-  @Input() title: string;
-  @Input() subtitle: string;
-  @Input() description: string;
+  @Input() data: Product;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
+
+  navigate(id: number) {
+    this.router.navigate(['/product', id]);
+  }
 
   // TODO: pipe translate
 }
