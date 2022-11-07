@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/shared/models/product';
 
 @Component({
   selector: 'app-favorites',
@@ -6,13 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./favorites.page.scss'],
 })
 export class FavoritesPage implements OnInit {
-  cardExample = [
+  cardExample: Product[] = [
     {
       id: 1,
       img: 'assets/products/patata-propiedades.jpg',
       title: 'Patatas',
       subtitle: '5 kilos patatas',
       description: '5 kilos patatas por 3 euro, no negocio',
+      price: 5.122,
     },
     {
       id: 2,
@@ -20,6 +22,7 @@ export class FavoritesPage implements OnInit {
       title: 'Patatas',
       subtitle: '5 kilos patatas',
       description: '5 kilos patatas por 3 euro, no negocio',
+      price: 2.3,
     },
   ];
 

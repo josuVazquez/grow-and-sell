@@ -1,11 +1,11 @@
-<ion-card>
-  <img [src]="img" />
+<ion-card (click)="navigate(data.id)">
+  <img [src]="data.img" />
   <div class="text">
     <ion-card-header>
-      <ion-card-subtitle>{{ title }}</ion-card-subtitle>
-      <ion-card-title>{{ subtitle }}</ion-card-title>
+      <ion-card-subtitle>{{ data.title }}</ion-card-subtitle>
+      <ion-card-title>{{ data.subtitle }}</ion-card-title>
     </ion-card-header>
 
-    <ion-card-content>{{ description }} </ion-card-content>
+    <ion-card-content>{{ data.description }} </ion-card-content>
   </div>
 </ion-card>
