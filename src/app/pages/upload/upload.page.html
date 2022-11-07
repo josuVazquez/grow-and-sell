@@ -33,7 +33,7 @@
   </form>
   <h3 class="title">UPLOAD A PHOTO</h3>
   <div class="fotos">
-
+    <app-updater-photo></app-updater-photo>
   </div>
   <app-map></app-map>
   <!-- <h3 class="title">TUS PRODUCTOS SE VERAN EN :</h3>
@@ -41,7 +41,7 @@
   </div> -->
 
   <ion-footer class="footer-buttons">
-    <ion-button class="button--round">
+    <ion-button class="button--round" (click)="uploadProduct()">
       Upload Product
     </ion-button>
     <ion-button class="button--round">

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-updater-photo',
@@ -6,12 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./updater-photo.component.scss'],
 })
 export class UpdaterPhotoComponent {
-  // maxItems: 10;
   arrayItems = new Array(10);
-
-  // item: {
-  //   img: '';
-  // };
 
   constructor() {
   }

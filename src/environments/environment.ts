@@ -14,7 +14,7 @@ export const environment = {
     measurementId: 'G-DVNYKJH12P'
   },
   mapsAPI: 'AIzaSyDiiKuS3frUyj0QlmPtbebje96SSM4cRX8',
-  backUrl: 'http://localhost:3000/'
+  backUrl: 'https://grow-and-sell-back.herokuapp.com/'
 };
 
 /*

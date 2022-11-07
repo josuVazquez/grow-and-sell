@@ -21,4 +21,8 @@ export class UploadPage implements OnInit {
   constructor(private currencyPipe: CurrencyPipe) {}
 
   ngOnInit() {}
+
+  uploadProduct() {
+    console.log('upload');
+  }
 }
