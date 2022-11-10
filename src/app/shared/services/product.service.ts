@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Product } from '../models/product';
+import { Product } from '../models/product.model';
 
 @Injectable({
   providedIn: 'root',
@@ -17,9 +17,9 @@ export class ProductService {
   //   return this.httpClient.get(`${environment.backUrl}product`, id).toPromise();
   // }
 
-  createProduct(product: Partial<Product>) {
+  createProduct(product: Product) {
     return this.httpClient
-      .put(`${environment.backUrl}product`, product)
+      .post(`${environment.backUrl}product`, product)
       .toPromise();
   }
 }

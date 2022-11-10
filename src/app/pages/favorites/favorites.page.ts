@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/shared/models/product';
+import { Product } from 'src/app/shared/models/product.model';
 
 @Component({
   selector: 'app-favorites',
@@ -9,20 +9,22 @@ import { Product } from 'src/app/shared/models/product';
 export class FavoritesPage implements OnInit {
   cardExample: Product[] = [
     {
-      id: 1,
-      img: 'assets/products/patata-propiedades.jpg',
+      uid: 1,
+      img: ['assets/products/patata-propiedades.jpg'],
       title: 'Patatas',
-      subtitle: '5 kilos patatas',
+      category: '',
       description: '5 kilos patatas por 3 euro, no negocio',
       price: 5.122,
+      currency: '€'
     },
     {
-      id: 2,
-      img: 'assets/products/patata-propiedades.jpg',
+      uid: 2,
+      img: ['assets/products/patata-propiedades.jpg'],
       title: 'Patatas',
-      subtitle: '5 kilos patatas',
+      category: '',
       description: '5 kilos patatas por 3 euro, no negocio',
       price: 2.3,
+      currency: '€'
     },
   ];
 

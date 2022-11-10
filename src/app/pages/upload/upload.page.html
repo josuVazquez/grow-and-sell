@@ -1,9 +1,9 @@
 <ion-content>
   <h3 class="title">INFORMATION ABOUT YOU ITEM</h3>
-  <form class="form">
+  <form class="form" [formGroup]="productForm">
     <ion-item class="item">
       <ion-label>What type of fresh product are you selling?</ion-label>
-      <ion-select placeholder="Select type" interface="popover" >
+      <ion-select placeholder="Select type" interface="popover" formControlName="type">
         <ion-select-option
           *ngFor="let product of productTypes"
           value="{{product.value}}"
@@ -13,12 +13,12 @@
       </ion-select>
     </ion-item>
     <ion-item class="item">
-      <ion-label>What is the name?</ion-label>
-      <ion-input type="text" name="name"></ion-input>
+      <ion-label>Title of the product</ion-label>
+      <ion-input type="text" name="title" formControlName="title"></ion-input>
     </ion-item>
     <ion-item class="item">
       <ion-label>Price</ion-label>
-      <ion-input type="text" name="name" class="ion-input--text-right">
+      <ion-input type="text" name="price" class="ion-input--text-right" formControlName="price">
       </ion-input>
     </ion-item>
     <ion-item class="item">
@@ -28,7 +28,7 @@
     </ion-item>
     <ion-item class="item--big">
       <ion-label>Description</ion-label>
-      <ion-textarea></ion-textarea>
+      <ion-textarea name="Description" formControlName="description"></ion-textarea>
     </ion-item>
   </form>
   <h3 class="title">UPLOAD A PHOTO</h3>
