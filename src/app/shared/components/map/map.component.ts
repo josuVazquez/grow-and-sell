@@ -38,6 +38,7 @@ export class MapComponent implements OnInit, OnDestroy {
   async loadUserLocation() {
     this._getUser = this.userService._getUser().subscribe(user => {
       if(user.lat && user.lng) {
+        console.log(user)
         const position = { coords: { latitude: user.lat, longitude: user.lng }}
         this.loadUserInfoIntoMap(position);
       } else {
@@ -51,9 +52,10 @@ export class MapComponent implements OnInit, OnDestroy {
   }
 
   loadUserInfoIntoMap(position) {
+    console.log(position)
     const latLng = {
-      lat: position.coords.latitude,
-      lng: position.coords.longitude
+      lat: +position.coords.latitude,
+      lng: +position.coords.longitude
     };
     this.setMapData(latLng)
     this.getStreet(latLng);

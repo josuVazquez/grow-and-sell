@@ -9,6 +9,10 @@ export class User {
     lng: string;
 
     constructor(data: Partial<User | any> = {}) {
+        if(!data) {
+            return;
+        }
+
         this.uid = data.uid;
         this.email = data.email;
         this.name = data.displayName;
