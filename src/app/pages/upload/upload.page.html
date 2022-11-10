@@ -3,7 +3,11 @@
   <form class="form" [formGroup]="productForm">
     <ion-item class="item">
       <ion-label>What type of fresh product are you selling?</ion-label>
-      <ion-select placeholder="Select type" interface="popover" formControlName="type">
+      <ion-select
+        placeholder="Select type"
+        interface="popover"
+        formControlName="type"
+      >
         <ion-select-option
           *ngFor="let product of productTypes"
           value="{{product.value}}"
@@ -18,17 +22,24 @@
     </ion-item>
     <ion-item class="item">
       <ion-label>Price</ion-label>
-      <ion-input type="text" name="price" class="ion-input--text-right" formControlName="price">
+      <ion-input
+        type="text"
+        name="price"
+        class="ion-input--text-right"
+        formControlName="price"
+      >
       </ion-input>
     </ion-item>
     <ion-item class="item">
       <ion-label>Moneda</ion-label>
-      <app-currency-drop-down>
-      </app-currency-drop-down>
+      <app-currency-drop-down> </app-currency-drop-down>
     </ion-item>
     <ion-item class="item--big">
       <ion-label>Description</ion-label>
-      <ion-textarea name="Description" formControlName="description"></ion-textarea>
+      <ion-textarea
+        name="Description"
+        formControlName="description"
+      ></ion-textarea>
     </ion-item>
   </form>
   <h3 class="title">UPLOAD A PHOTO</h3>
@@ -40,12 +51,7 @@
   <div class="map">
   </div> -->
 
-  <ion-footer class="footer-buttons">
-    <ion-button class="button--round" (click)="uploadProduct()">
-      Upload Product
-    </ion-button>
-    <ion-button class="button--round">
-      Cancel
-    </ion-button>
-  </ion-footer>
+  <ion-button class="button--round" (click)="uploadProduct()">
+    Upload Product
+  </ion-button>
 </ion-content>
