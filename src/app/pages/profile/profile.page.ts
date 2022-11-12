@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/shared/models/user.model';
 import { FirebaseService } from 'src/app/shared/services/firebase.service';
 import { UserService } from 'src/app/shared/services/user.service';
 
@@ -8,6 +9,7 @@ import { UserService } from 'src/app/shared/services/user.service';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
+  data: User;
   // data = {
   //   img: '',
   //   name: 'Nombre Apellido Apellido',
@@ -23,14 +25,15 @@ export class ProfilePage implements OnInit {
 
   ngOnInit() {
     // faltaria un rating y un numero de telefono opcional (?)
-    // this.userService._getUser().subscribe((dt) => {
-    //   this.data = {
-    //     ...this.data,
-    //     name: dt.name,
-    //     email: dt.email,
-    //     img: dt.photoURL,
-    //   };
-    // });
+    this.userService._getUser().subscribe((dt) => {
+      debugger;
+      this.data = {
+        ...this.data,
+        displayName: dt.displayName,
+        email: dt.email,
+        photoURL: dt.photoURL,
+      };
+    });
   }
 
   logout() {

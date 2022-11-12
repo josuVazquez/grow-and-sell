@@ -3,13 +3,11 @@
 ion-card {
   background: var(--ion-color-light);
   box-shadow: rgb(121 174 163 / 12%) 0px 0.25rem 1rem;
-  width: 20%;
 }
 
 @include tablet;
 @include smartphone {
   ion-card {
-    width: 94%;
     display: flex;
     flex: 1 1 auto;
     padding-right: 3%;
