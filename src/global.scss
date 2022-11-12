@@ -17,7 +17,7 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 :root {
-  --btn-border-radius: 25px;
+  --btn-border-radius: 1.5rem;
 }
 
 .button--icon {
@@ -28,16 +28,16 @@
   --color: var(--ion-color-primary);
   --box-shadow: 0;
   --ripple-color: deeppink;
-  --padding-top: 10px;
-  --padding-bottom: 10px;
+  --padding-top: 0.7rem;
+  --padding-bottom: 0.7rem;
 }
 
 .button--round {
   --border-radius: var(--btn-border-radius);
-  --padding-top: 10px;
-  --padding-bottom: 10px;
+  --padding-top: 1em;
+  --padding-bottom: 1em;
   span {
-    margin-left: 6px;
+    margin-left: 0.7em
   }
 
   &:hover {
@@ -56,13 +56,13 @@
 .a-btn {
   text-decoration: none;
   border-radius: var(--btn-border-radius);
-  padding: 8px;
-  padding-right: 16px;
+  padding: 0.5em;
+  padding-right: 1em;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 0.3em;
   ion-icon {
-    font-size: 24px;
+    font-size: 1.5rems;
   }
   &:hover {
     cursor: pointer;
@@ -71,7 +71,7 @@
 
 .button--hide-text {
   @include tablet {
-    padding: 8px;
+    padding: 0.5em;
     span {
       display: none;
     }
@@ -96,7 +96,7 @@
       color: var(--ion-color-primary-contrast);
     }
     ion-icon {
-      border-radius: 16px;
+      border-radius: 1rem;
       background-color: var(--ion-color-primary-contrast);
       color: var(--ion-color-primary-shade);
     }
@@ -124,19 +124,19 @@
 }
 
 .modal--small {
-  --max-width: 400px;
-  --border-radius: 10px;
-  --max-height: 450px;
+  --max-width: 25rem;
+  --border-radius: 0.6em;
+  --max-height: 28.1rem;
 }
 
 .modal--small {
   --max-width: 90%;
-  --border-radius: 10px;
-  --max-height: 450px;
+  --border-radius: 0.6em;
+  --max-height: 28.1rem;
 }
 
 .tabs-inner:first-child {
-  margin-top: 65px;
+  margin-top: 4.06rem;
 }
 
 .ion-input--text-right {
@@ -158,4 +158,5 @@ ion-content {
     --padding-start: 10%;
     --padding-end: 10%;
   }
+  padding-bottom: 1.5rem;
 }

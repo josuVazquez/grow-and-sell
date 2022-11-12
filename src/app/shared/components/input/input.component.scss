@@ -10,13 +10,13 @@
 
 .input-div {
   display: flex;
-  gap: 12px;
+  gap: 0.7em;
   width: 100%;
   align-items: center;
   border: 1px solid var(--ion-color-primary);
   color: var(--ion-color-primary);
-  border-radius: 25px;
-  padding: 10px;
+  border-radius: 1.5rem;
+  padding: 0.6em;
   justify-self: center;
   flex: 1;
 }
