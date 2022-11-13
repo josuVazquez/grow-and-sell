@@ -13,6 +13,7 @@ import { MapComponent } from './map/map.component';
 import { ChangeLocationComponent } from './change-location/change-location.component';
 import { UpdaterPhotoComponent } from './updater-photo/updater-photo.component';
 import { TemplatePhotoComponent } from './template-photo/template-photo.component';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 const components = [
   InputComponent,
@@ -22,6 +23,7 @@ const components = [
   MapComponent,
   ChangeLocationComponent,
   UpdaterPhotoComponent,
+  SpinnerComponent,
   TemplatePhotoComponent,
 ];
 @NgModule({
