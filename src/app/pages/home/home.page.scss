@@ -31,12 +31,9 @@
 }
 
 .card-container {
-  display: flex;
-  --padding-top: 1rem;
-  flex-wrap: wrap;
-  app-card {
-    width: 25%;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 1rem;
 }
 
 @include tablet;
