@@ -3,7 +3,7 @@ export class User {
   email: string;
   displayName: string;
   photoURL: string;
-  phone: string;
+  phoneNumber: string;
   rating: number;
   lat: string;
   lng: string;
@@ -16,7 +16,7 @@ export class User {
         this.uid = data.uid;
         this.email = data.email;
         this.displayName = data.displayName;
-        this.phone = data.phone;
+        this.phoneNumber = data.phoneNumber;
         this.rating = data.rating;
         this.photoURL = data.photoURL;
         this.lat = data.lat;

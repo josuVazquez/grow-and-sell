@@ -23,6 +23,7 @@ const components = [
   MapComponent,
   ChangeLocationComponent,
   UpdaterPhotoComponent,
+  SpinnerComponent,
   TemplatePhotoComponent,
   SpinnerComponent
 ];
