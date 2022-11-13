@@ -30,12 +30,6 @@
   }
 }
 
-.card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
-  gap: 1rem;
-}
-
 @include tablet;
 @include smartphone {
   .card-container {
@@ -43,5 +37,8 @@
     app-card {
       width: 100%;
     }
+  }
+  .banner > h3 {
+    width: 60%;
   }
 }
