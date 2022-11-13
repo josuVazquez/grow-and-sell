@@ -7,8 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { ComponentsModule } from '../shared/components/components.module';
 import { RouterModule } from '@angular/router';
 
-
-
 @NgModule({
   declarations: [TabsComponent, HeaderComponent],
   imports: [
