@@ -15,6 +15,10 @@
       "PASSWORD": "Inserte la contraseña"
     }
   },
+  "profile": {
+    "logout": "Cerrar sesión",
+    "edit": "Editar perfil"
+  },
   "ProductTypes": {
     "vegetables": "Verduras/Hortalizas",
     "fruits": "Frutas",
