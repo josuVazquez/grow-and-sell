@@ -22,5 +22,6 @@ export class CardComponent implements OnInit {
     event.stopPropagation();
     console.log('clicked');
   }
+
   // TODO: pipe translate
 }
