@@ -10,13 +10,6 @@ import { UserService } from 'src/app/shared/services/user.service';
 })
 export class ProfilePage implements OnInit {
   data: User;
-  // data = {
-  //   img: '',
-  //   name: 'Nombre Apellido Apellido',
-  //   email: 'example@example.com',
-  //   phone: '+34 12393123',
-  //   rating: '3.0 / 5.0',
-  // };
 
   constructor(
     public userService: UserService,
@@ -26,7 +19,6 @@ export class ProfilePage implements OnInit {
   ngOnInit() {
     // faltaria un rating y un numero de telefono opcional (?)
     this.userService._getUser().subscribe((dt) => {
-      debugger;
       this.data = {
         ...this.data,
         displayName: dt.displayName,
@@ -38,5 +30,9 @@ export class ProfilePage implements OnInit {
 
   logout() {
     this.firebaseService.SignOut();
+  }
+
+  editProfile() {
+    console.log('Hola');
   }
 }

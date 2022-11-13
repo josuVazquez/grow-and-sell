@@ -23,6 +23,11 @@
         <ion-label>{{user.rating}}</ion-label>
       </ion-item>
     </ion-list>
-    <ion-button class="button--round" (click)="logout()">Logout</ion-button>
+    <ion-button class="button--round" (click)="logout()">
+      {{"profile.logout" | translate}}
+    </ion-button>
+    <ion-button class="button--round" (click)="editProfile()">
+      Editar Página
+    </ion-button>
   </div>
 </ion-content>
