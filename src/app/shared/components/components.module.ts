@@ -25,6 +25,7 @@ const components = [
   UpdaterPhotoComponent,
   SpinnerComponent,
   TemplatePhotoComponent,
+  SpinnerComponent
 ];
 @NgModule({
   declarations: [...components],
