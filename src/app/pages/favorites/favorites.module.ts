@@ -8,6 +8,7 @@ import { FavoritesPageRoutingModule } from './favorites-routing.module';
 
 import { FavoritesPage } from './favorites.page';
 import { ComponentsModule } from 'src/app/shared/components/components.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -16,6 +17,9 @@ import { ComponentsModule } from 'src/app/shared/components/components.module';
     FormsModule,
     IonicModule,
     FavoritesPageRoutingModule,
+    TranslateModule.forChild({
+      extend: true,
+    }),
   ],
   declarations: [FavoritesPage],
 })

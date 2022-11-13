@@ -1,19 +1,21 @@
 {
-  "HEADER": {
-    "INPUT": {
-      "PLACEHOLDER": "Soy el placeholder"
+  "header": {
+    "input": {
+      "placeholder": "Soy el placeholder"
     },
-    "ADD_PRODUCT": "Añadir producto",
-    "LOGIN": "Registrarse o Iniciar sesion",
-    "FAVORITES": "Favoritos",
-    "PROFILE": "Perfil"
+    "add_product": "Añadir producto",
+    "login": "Registrarse o Iniciar sesion",
+    "favorites": "Favoritos",
+    "profile": "Perfil"
   },
-  "LOGIN": {
-    "TITLE": "Bienvenido",
-    "PLACEHOLDER": {
-      "USERNAME": "Inserte el usuario",
-      "PASSWORD": "Inserte la contraseña"
-    }
+  "login": {
+    "title": "Bienvenido",
+    "action": "Registrarse o Iniciar sesión",
+    "placeholder": {
+      "username": "Inserte el usuario",
+      "password": "Inserte la contraseña"
+    },
+    "google": "Inciar sesión con google"
   },
   "profile": {
     "logout": "Cerrar sesión",
@@ -24,7 +26,10 @@
     "banner": "¿Tienes un negocio y quieres empezar a vender online? Descubre nuestras soluciones para impulsar tus ventas. ¡Al lío!",
     "product-list-title": "Productos cerca de ti"
   },
-  "ProductTypes": {
+  "favorites": {
+    "title": "Favoritos"
+  },
+  "productTypes": {
     "vegetables": "Verduras/Hortalizas",
     "fruits": "Frutas",
     "dairyProducts": "Productos Lácteos",
