@@ -1,5 +1,50 @@
+@import "../../../theme/mixin.scss";
+
 .center {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
+}
+
+.banner {
+  padding: 2rem;
+  width: 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
+  background-color: var(--ion-color-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  * {
+    color: var(--ion-background-color);
+  }
+
+  h3 {
+    width: 50%;
+  }
+
+  ion-icon {
+    font-size: 3rem;
+  }
+}
+
+.card-container {
+  display: flex;
+  --padding-top: 1rem;
+  flex-wrap: wrap;
+  app-card {
+    width: 25%;
+  }
+}
+
+@include tablet;
+@include smartphone {
+  .card-container {
+    flex-direction: column;
+    app-card {
+      width: 100%;
+    }
+  }
 }

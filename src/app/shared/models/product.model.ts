@@ -1,6 +1,6 @@
 export class Product {
   uid: number;
-  img: Array<string>;
+  img: Array<string> | string;
   title: string;
   category: string;
   description: string;

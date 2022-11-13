@@ -1,5 +1,15 @@
 <ion-content>
   <div class="center">
-    <app-updater-photo></app-updater-photo>
+    <h1>{{ "home.title" | translate }}</h1>
+  </div>
+  <div class="banner">
+    <h3>{{ "home.banner" | translate }}</h3>
+    <ion-icon name="rose-outline"></ion-icon>
+  </div>
+  <div class="products-list">
+    <h2>{{ "home.product-list-title" | translate }}</h2>
+    <div class="card-container">
+      <app-card *ngFor="let item of cardExample" [data]="item"> </app-card>
+    </div>
   </div>
 </ion-content>

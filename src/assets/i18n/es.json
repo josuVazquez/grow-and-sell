@@ -19,6 +19,11 @@
     "logout": "Cerrar sesión",
     "edit": "Editar perfil"
   },
+  "home": {
+    "title": "Bienvenido a Grow&Sell",
+    "banner": "¿Tienes un negocio y quieres empezar a vender online? Descubre nuestras soluciones para impulsar tus ventas. ¡Al lío!",
+    "product-list-title": "Productos cerca de ti"
+  },
   "ProductTypes": {
     "vegetables": "Verduras/Hortalizas",
     "fruits": "Frutas",
