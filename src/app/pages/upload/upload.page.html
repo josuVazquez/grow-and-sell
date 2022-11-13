@@ -1,8 +1,8 @@
 <ion-content>
-  <h3 class="title">INFORMATION ABOUT YOU ITEM</h3>
+  <h3 class="title">{{"upload.title" | translate}}</h3>
   <form class="form" [formGroup]="productForm">
     <ion-item class="item">
-      <ion-label>What type of fresh product are you selling?</ion-label>
+      <ion-label>{{"upload.category" | translate}}</ion-label>
       <ion-select
         placeholder="Select type"
         interface="popover"
@@ -17,11 +17,11 @@
       </ion-select>
     </ion-item>
     <ion-item class="item">
-      <ion-label>Title of the product</ion-label>
+      <ion-label>{{"upload.name" | translate}}</ion-label>
       <ion-input type="text" name="title" formControlName="title"></ion-input>
     </ion-item>
     <ion-item class="item">
-      <ion-label>Price</ion-label>
+      <ion-label>{{"upload.price" | translate}}</ion-label>
       <ion-input
         type="text"
         name="price"
@@ -31,18 +31,18 @@
       </ion-input>
     </ion-item>
     <ion-item class="item">
-      <ion-label>Moneda</ion-label>
+      <ion-label>{{"upload.currency" | translate}}</ion-label>
       <app-currency-drop-down> </app-currency-drop-down>
     </ion-item>
     <ion-item class="item--big">
-      <ion-label>Description</ion-label>
+      <ion-label>{{"upload.description" | translate}}</ion-label>
       <ion-textarea
         name="Description"
         formControlName="description"
       ></ion-textarea>
     </ion-item>
   </form>
-  <h3 class="title">UPLOAD A PHOTO</h3>
+  <h3 class="title">{{"upload.photo-title" | translate}}</h3>
   <div class="fotos">
     <app-updater-photo></app-updater-photo>
   </div>
@@ -50,7 +50,7 @@
 
   <div class="button">
     <ion-button class="button--round" (click)="uploadProduct()">
-      Upload Product
+      {{"upload.upload-button" | translate}}
     </ion-button>
   </div>
 </ion-content>

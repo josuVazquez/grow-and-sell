@@ -36,5 +36,15 @@
     "legumes": "Legumbres",
     "tubers": "Tubérculos",
     "eggs": "Huevos"
+  },
+  "upload": {
+    "title": "Información del producto",
+    "category": "¿Que tipo de producto vendes?",
+    "name": "Nombre del producto",
+    "price": "Precio",
+    "currency": "Moneda",
+    "description": "Descripción",
+    "photo-title": "Subir foto",
+    "upload-button": "Confirmar"
   }
 }
