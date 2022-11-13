@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/shared/models/user.model';
 import { FirebaseService } from 'src/app/shared/services/firebase.service';
 import { UserService } from 'src/app/shared/services/user.service';
@@ -11,13 +12,17 @@ import { UserService } from 'src/app/shared/services/user.service';
 export class ProfilePage implements OnInit {
   data: User;
 
+  userForm = new FormGroup({
+    displayName: new FormControl('', [Validators.required]),
+    phoneNumber: new FormControl('', [])
+  });
+
   constructor(
     public userService: UserService,
     private firebaseService: FirebaseService
   ) {}
 
   ngOnInit() {
-    // faltaria un rating y un numero de telefono opcional (?)
     this.userService._getUser().subscribe((dt) => {
       this.data = {
         ...this.data,
@@ -32,7 +37,8 @@ export class ProfilePage implements OnInit {
     this.firebaseService.SignOut();
   }
 
-  editProfile() {
-    console.log('Hola');
+  saveChanges() {
+    const user = this.userForm.getRawValue();
+    this.userService.updateUser(user);
   }
 }

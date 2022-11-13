@@ -1,33 +1,27 @@
 <ion-content *ngIf="userService._getUser() | async as user">
   <header class="profile__header">
     <div class="circle"></div>
-    <img src="{{user.photoURL}}" alt="" srcset="" />
+    <img [src]="user.photoURL" alt="" srcset="" />
   </header>
-  <div class="profile__info">
+  <form class="profile__info">
     <ion-list>
       <ion-item lines="full">
         <ion-icon name="person-outline" slot="start"></ion-icon>
-        <ion-label>{{user.displayName}}</ion-label>
-      </ion-item>
-      <ion-item lines="full">
-        <ion-icon name="mail-outline" slot="start"></ion-icon>
-        <ion-label>{{user.email}}</ion-label>
+        <ion-input [value]="user.displayName"></ion-input>
       </ion-item>
       <ion-item lines="full">
         <ion-icon name="call-outline" slot="start"></ion-icon>
-        <ion-label>{{user.phone}}</ion-label>
+        <ion-input [value]="user.phone"></ion-input>
       </ion-item>
-
       <ion-item lines="full">
         <ion-icon name="star-outline" slot="start"></ion-icon>
         <ion-label>{{user.rating}}</ion-label>
       </ion-item>
     </ion-list>
-    <ion-button class="button--round" (click)="logout()">
-      {{"profile.logout" | translate}}
-    </ion-button>
-    <ion-button class="button--round" (click)="editProfile()">
-      Editar Página
-    </ion-button>
-  </div>
+    <app-map></app-map>
+  </form>
+  <footer class="footer">
+    <ion-button class="button--round" (click)="saveChanges()">Save</ion-button>
+    <ion-button class="button--round" (click)="logout()">Logout</ion-button>
+  </footer>
 </ion-content>
