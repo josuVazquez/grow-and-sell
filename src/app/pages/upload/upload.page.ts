@@ -11,12 +11,12 @@ import { ProductService } from 'src/app/shared/services/product.service';
 })
 export class UploadPage implements OnInit {
   productTypes = [
-    {value: 'vegetables', name: 'ProductTypes.vegetables'},
-    {value: 'fruits', name: 'ProductTypes.fruits'},
-    {value: 'dairyProducts', name: 'ProductTypes.dairyProducts'},
-    {value: 'legumes', name: 'ProductTypes.legumes'},
-    {value: 'tubers', name: 'ProductTypes.tubers'},
-    {value: 'eggs', name: 'ProductTypes.eggs'},
+    {value: 'vegetables', name: 'productTypes.vegetables'},
+    {value: 'fruits', name: 'productTypes.fruits'},
+    {value: 'dairyProducts', name: 'productTypes.dairyProducts'},
+    {value: 'legumes', name: 'productTypes.legumes'},
+    {value: 'tubers', name: 'productTypes.tubers'},
+    {value: 'eggs', name: 'productTypes.eggs'},
   ];
 
   productForm = new FormGroup({

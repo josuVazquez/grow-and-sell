@@ -1,24 +1,40 @@
 {
-  "HEADER": {
-    "PRUEBA": "Hello"
+  "header": {
+    "input": {
+      "placeholder": "Soy el placeholder"
+    },
+    "add_product": "Añadir producto",
+    "login": "Registrarse o Iniciar sesion",
+    "favorites": "Favoritos",
+    "profile": "Perfil"
   },
-  "ProductTypes": {
-    "vegetables": "Vegetables",
-    "fruits": "Fruits",
-    "dairyProducts": "Dairy Products",
-    "legumes": "Legumes",
-    "tubers": "Tubers",
-    "eggs": "Eggs"
+  "login": {
+    "title": "Bienvenido",
+    "action": "Registrarse o Iniciar sesión",
+    "placeholder": {
+      "username": "Inserte el usuario",
+      "password": "Inserte la contraseña"
+    },
+    "google": "Inciar sesión con google"
   },
-
-  "INPUT": {
-    "PLACEHOLDER": "Soy el placeholder"
+  "profile": {
+    "logout": "Cerrar sesión",
+    "edit": "Editar perfil"
   },
-  "ADD_PRODUCT": "Añadir producto",
-  "LOGIN": {
-    "PLACEHOLDER": {
-      "USERNAME": "Inserte el usuario",
-      "PASSWORD": "Inserte la contraseña"
-    }
+  "home": {
+    "title": "Bienvenido a Grow&Sell",
+    "banner": "¿Tienes un negocio y quieres empezar a vender online? Descubre nuestras soluciones para impulsar tus ventas. ¡Al lío!",
+    "product-list-title": "Productos cerca de ti"
+  },
+  "favorites": {
+    "title": "Favoritos"
+  },
+  "productTypes": {
+    "vegetables": "Verduras/Hortalizas",
+    "fruits": "Frutas",
+    "dairyProducts": "Productos Lácteos",
+    "legumes": "Legumbres",
+    "tubers": "Tubérculos",
+    "eggs": "Huevos"
   }
 }
