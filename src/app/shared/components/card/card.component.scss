@@ -9,6 +9,11 @@ ion-card {
     object-fit: cover;
     width: 100%;
   }
+  &:hover {
+    background: var(--ion-color-primary);
+    color: white;
+    cursor: pointer;
+  }
 }
 
 @include tablet;
