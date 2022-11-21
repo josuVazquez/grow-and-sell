@@ -2,7 +2,12 @@
   <img [src]="data.img" />
   <div class="text">
     <ion-card-header>
-      <ion-card-title>{{ data.title }}</ion-card-title>
+      <ion-card-title>
+        {{ data.title }}
+        <ion-button (click)="setFavorites($event)">
+          <ion-icon name="star-outline"></ion-icon>
+        </ion-button>
+      </ion-card-title>
       <ion-card-subtitle>{{ data.category }}</ion-card-subtitle>
     </ion-card-header>
 

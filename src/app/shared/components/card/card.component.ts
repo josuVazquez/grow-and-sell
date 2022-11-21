@@ -18,5 +18,10 @@ export class CardComponent implements OnInit {
     this.router.navigate(['/product', id]);
   }
 
+  setFavorites(event: Event) {
+    event.stopPropagation();
+    console.log('clicked');
+  }
+
   // TODO: pipe translate
 }
