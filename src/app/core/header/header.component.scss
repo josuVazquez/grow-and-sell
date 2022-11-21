@@ -1,4 +1,4 @@
-@import "../../../theme/mixin.scss";
+@import "src/scss/settings/mixin.scss";
 
 .header {
   display: flex;
@@ -14,7 +14,7 @@
     left: 1em;
     right: 1em;
   }
-  z-index: 3;
+  z-index: var(--z_header);
   border-bottom: 1px solid;
   border-color: var(--ion-color-medium);
 }

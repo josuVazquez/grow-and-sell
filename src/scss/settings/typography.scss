@@ -1,0 +1,15 @@
+// Typography scale
+$_fs-base: 16;
+
+$_fs-9: 9 / $_fs-base + rem;
+$_fs-12: 12 / $_fs-base + rem;
+$_fs-14: 14 / $_fs-base + rem;
+$_fs-19: 19 / $_fs-base + rem;
+$_fs-25: 25 / $_fs-base + rem;
+$_fs-33: 33 / $_fs-base + rem;
+$_fs-44: 44 / $_fs-base + rem;
+
+// Typography application
+$fs-small-icon: $_fs-9;
+$fs-medium-icon: $_fs-19;
+$fs-big-icon: $_fs-33;

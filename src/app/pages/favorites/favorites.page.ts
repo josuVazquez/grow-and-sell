@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/shared/models/product.model';
+import { Product } from '@models/product.model';
 
 @Component({
   selector: 'app-favorites',

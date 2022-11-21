@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { UserService } from '../../services/user.service';
+import { UserService } from '@services/user.service';
 import { ChangeLocationComponent } from '../change-location/change-location.component';
 
 @Component({

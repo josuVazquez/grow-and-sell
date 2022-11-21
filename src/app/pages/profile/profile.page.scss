@@ -27,7 +27,7 @@ ion-content {
   }
 
   img {
-    z-index: 1;
+    z-index: var(--z_profile__img);
   }
 }
 
