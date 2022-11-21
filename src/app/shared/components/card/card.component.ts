@@ -8,13 +8,11 @@ import { Product } from '../../models/product.model';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
   @Input() data: Product;
   isFavorite = false;
 
   constructor(private router: Router, private userService: UserService) {}
-
-  ngOnInit() {}
 
   navigate(id: number) {
     this.router.navigate(['/product', id]);
