@@ -1,3 +1,5 @@
+import { Product } from './product.model';
+
 export class User {
   uid: string;
   email: string;
@@ -7,19 +9,21 @@ export class User {
   rating: number;
   lat: string;
   lng: string;
+  products: Product[] = [];
 
-    constructor(data: Partial<User | any> = {}) {
-        if(!data) {
-            return;
-        }
-
-        this.uid = data.uid;
-        this.email = data.email;
-        this.displayName = data.displayName;
-        this.phoneNumber = data.phoneNumber;
-        this.rating = data.rating;
-        this.photoURL = data.photoURL;
-        this.lat = data.lat;
-        this.lng = data.lng;
+  constructor(data: Partial<User | any> = {}) {
+    if (!data) {
+      return;
     }
+
+    this.uid = data.uid;
+    this.email = data.email;
+    this.displayName = data.displayName;
+    this.phoneNumber = data.phoneNumber;
+    this.rating = data.rating;
+    this.photoURL = data.photoURL;
+    this.lat = data.lat;
+    this.lng = data.lng;
+    this.products = data.products;
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from '@services/user.service';
 import { Product } from '../../models/product.model';
 
 @Component({
@@ -9,8 +10,9 @@ import { Product } from '../../models/product.model';
 })
 export class CardComponent implements OnInit {
   @Input() data: Product;
+  isFavorite = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private userService: UserService) {}
 
   ngOnInit() {}
 
@@ -18,9 +20,27 @@ export class CardComponent implements OnInit {
     this.router.navigate(['/product', id]);
   }
 
-  setFavorites(event: Event) {
+  async setFavorites(event: Event) {
     event.stopPropagation();
-    console.log('clicked');
+    const userData = await this.userService.getUser();
+    userData.products.push(this.data);
+    this.userService.updateUser(userData);
+    this.toggleFavorite();
+  }
+
+  async unsetFavorites(event: Event) {
+    event.stopPropagation();
+
+    const userData = await this.userService.getUser();
+    userData.products.filter((product) => product.id !== this.data.uid);
+
+    this.userService.updateUser(userData);
+
+    this.toggleFavorite();
+  }
+
+  toggleFavorite() {
+    this.isFavorite = !this.isFavorite;
   }
 
   // TODO: pipe translate
