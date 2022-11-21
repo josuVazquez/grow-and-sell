@@ -4,8 +4,20 @@
     <ion-card-header>
       <ion-card-title>
         {{ data.title }}
-        <ion-button (click)="setFavorites($event)">
+        <ion-button
+          class="button--icon"
+          *ngIf="isFavorite"
+          (click)="setFavorites($event)"
+        >
           <ion-icon name="star-outline"></ion-icon>
+        </ion-button>
+
+        <ion-button
+          class="button--icon"
+          *ngIf="!isFavorite"
+          (click)="unsetFavorites($event)"
+        >
+          <ion-icon name="star"></ion-icon>
         </ion-button>
       </ion-card-title>
       <ion-card-subtitle>{{ data.category }}</ion-card-subtitle>
