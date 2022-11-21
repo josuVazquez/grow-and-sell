@@ -9,14 +9,17 @@ import { UserService } from 'src/app/shared/services/user.service';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage {
+  readOnly = true;
+
   userForm = new FormGroup({
     displayName: new FormControl('', [Validators.required]),
-    phoneNumber: new FormControl('', [])
+    phoneNumber: new FormControl('', []),
   });
 
-  constructor(public userService: UserService,
-    private firebaseService: FirebaseService) {
-  }
+  constructor(
+    public userService: UserService,
+    private firebaseService: FirebaseService
+  ) {}
 
   logout() {
     this.firebaseService.SignOut();
@@ -25,6 +28,10 @@ export class ProfilePage {
   saveChanges() {
     const user = this.userForm.getRawValue();
     this.userService.updateUser(user);
+    this.toggleReadOnly();
   }
 
+  toggleReadOnly() {
+    this.readOnly = !this.readOnly;
+  }
 }
