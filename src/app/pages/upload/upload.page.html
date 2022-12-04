@@ -4,9 +4,9 @@
     <ion-item class="item">
       <ion-label>{{"upload.category" | translate}}</ion-label>
       <ion-select
-        placeholder="Select type"
+        placeholder="Select category"
         interface="popover"
-        formControlName="type"
+        formControlName="category"
       >
         <ion-select-option
           *ngFor="let product of productTypes"
@@ -32,7 +32,7 @@
     </ion-item>
     <ion-item class="item">
       <ion-label>{{"upload.currency" | translate}}</ion-label>
-      <app-currency-drop-down> </app-currency-drop-down>
+      <app-currency-drop-down formControlName="currency"> </app-currency-drop-down>
     </ion-item>
     <ion-item class="item--big">
       <ion-label>{{"upload.description" | translate}}</ion-label>

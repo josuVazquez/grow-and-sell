@@ -20,7 +20,7 @@ export class UploadPage implements OnInit {
   ];
 
   productForm = new FormGroup({
-    type: new FormControl('', [Validators.required]),
+    category: new FormControl('', [Validators.required]),
     title: new FormControl('', [Validators.required]),
     price: new FormControl('', [Validators.required]),
     currency: new FormControl('', [Validators.required]),
@@ -33,6 +33,7 @@ export class UploadPage implements OnInit {
 
   uploadProduct() {
     const product = this.productForm.getRawValue();
+    console.log(product);
     this.productService.createProduct(new Product(product));
     console.log('upload');
   }

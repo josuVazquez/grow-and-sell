@@ -10,9 +10,9 @@ import { Product } from '../models/product.model';
 export class ProductService {
   constructor(private httpClient: HttpClient) {}
 
-  // getListOfProducts(): Promise<any> {
-  //   return this.httpClient.put(`${environment.backUrl}product`).toPromise();
-  // }
+  getListOfProducts(lat: string, lng: string): Promise<any> {
+    return this.httpClient.get(`${environment.backUrl}product/${lat}/${lng}`).toPromise();
+  }
 
   getProductById(id: string): Observable<any> {
     return this.httpClient.get(`${environment.backUrl}product/${id}`);

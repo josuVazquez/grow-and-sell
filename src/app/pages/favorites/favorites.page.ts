@@ -9,7 +9,7 @@ import { Product } from '@models/product.model';
 export class FavoritesPage implements OnInit {
   cardExample: Product[] = [
     {
-      uid: 1,
+      _id: '1',
       img: ['assets/products/patata-propiedades.jpg'],
       title: 'Patatas',
       category: '',
@@ -18,7 +18,7 @@ export class FavoritesPage implements OnInit {
       currency: '€'
     },
     {
-      uid: 2,
+      _id: '2',
       img: ['assets/products/patata-propiedades.jpg'],
       title: 'Patatas',
       category: '',

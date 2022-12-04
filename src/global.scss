@@ -28,6 +28,11 @@
   --btn-border-radius: 1.5rem;
 }
 
+.button--transparent {
+  background: transparent;
+  
+}
+
 .button--icon {
   --background: none;
   --background-hover: #9ce0be;

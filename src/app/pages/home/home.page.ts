@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/shared/models/product.model';
 import { mockProduct } from 'src/app/shared/models/mock/mockProducts';
+import { UserService } from '@services/user.service';
+import { ProductService } from '@services/product.service';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,13 @@ import { mockProduct } from 'src/app/shared/models/mock/mockProducts';
 export class HomePage implements OnInit {
   cardExample: any = mockProduct;
 
-  constructor() {}
+  constructor(private userService: UserService, private productService: ProductService) {
+    this.userService._getUser().subscribe(userInfo => {
+      this.productService.getListOfProducts(userInfo.lat, userInfo.lng).then(r => console.log(r));
+      // userInfo.lat
+      // userInfo.lng
+    });
+  }
 
   ngOnInit() {}
 }

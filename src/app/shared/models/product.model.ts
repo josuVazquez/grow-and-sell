@@ -1,5 +1,5 @@
 export class Product {
-  uid: number;
+  _id: string;
   img: Array<string> | string;
   title: string;
   category: string;
@@ -12,7 +12,7 @@ export class Product {
       throw new Error(`Price NAN`);
     }
 
-    this.uid = data.uid;
+    this._id = data._id;
     this.img = data.img;
     this.title = data.title;
     this.category = data.category;
