@@ -19,7 +19,8 @@
   },
   "profile": {
     "logout": "Cerrar sesión",
-    "edit": "Editar perfil"
+    "edit": "Editar perfil",
+    "save": "Guardar perfil"
   },
   "home": {
     "title": "Bienvenido a Grow&Sell",

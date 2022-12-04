@@ -7,11 +7,20 @@
     <ion-list>
       <ion-item lines="full">
         <ion-icon name="person-outline" slot="start"></ion-icon>
-        <ion-input formControlName="displayName" value="{{user.displayName}}"></ion-input>
+        <ion-input
+          formControlName="displayName"
+          value="{{user.displayName}}"
+          [readonly]="readOnly"
+        ></ion-input>
       </ion-item>
       <ion-item lines="full">
         <ion-icon name="call-outline" slot="start"></ion-icon>
-        <ion-input formControlName="phoneNumber" value="{{user.phoneNumber}}"></ion-input>
+        <ion-input
+          formControlName="phoneNumber"
+          value="{{user.phoneNumber}}"
+          [readonly]="readOnly"
+          tappable
+        ></ion-input>
       </ion-item>
       <ion-item lines="full">
         <ion-icon name="star-outline" slot="start"></ion-icon>
@@ -21,7 +30,14 @@
     <app-map></app-map>
   </form>
   <footer class="profile__footer">
-    <ion-button class="button--round" (click)="saveChanges()">
+    <ion-button *ngIf="!readOnly" class="button--round" (click)="saveChanges()">
+      {{"profile.save" | translate}}
+    </ion-button>
+    <ion-button
+      *ngIf="readOnly"
+      class="button--round"
+      (click)="toggleReadOnly()"
+    >
       {{"profile.edit" | translate}}
     </ion-button>
     <ion-button class="button--round" (click)="logout()">
