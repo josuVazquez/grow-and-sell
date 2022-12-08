@@ -1,5 +1,5 @@
 <ion-card (click)="navigate(data._id)" class="card">
-  <img [src]="data.img" alt="Product image"/>
+  <img [src]="data.img || '/assets/default.png'" [alt]="data.img ? 'Product image' : 'No image found'"/>
   <div class="text">
     <ion-card-header>
       <ion-card-title class="card__title">
