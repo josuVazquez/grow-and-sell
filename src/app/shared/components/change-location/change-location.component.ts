@@ -46,9 +46,9 @@ export class ChangeLocationComponent implements OnInit, AfterViewInit {
     this.setInputSearch();
   }
 
-  updateLocation() {
-    console.log(this.center)
-    this.userService.updateUser( {location: this.center} );
+  async updateLocation() {
+    const user = await this.userService.updateUser( {lat: this.marker?.position?.lat().toString(), lng: this.marker?.position?.lng().toString()} );
+    this.userService.setUser(user);
     this.modalCtrl.dismiss();
   }
 

@@ -22,13 +22,12 @@ export class FirebaseService {
 
   async setUser(user: any) {
     localStorage.setItem('user', JSON.stringify(user || {}));
-    this.userService.setUser(new User(user));
     if(!user) {
       return;
     }
     const token = await user?.getIdToken();
     localStorage.setItem('token', token);
-    this.userService.createUser(new User(user));
+
   }
 
   SignIn(email, password) {
@@ -83,11 +82,16 @@ export class FirebaseService {
       });
   }
 
-  SetUserData(user) {
+  async SetUserData(user) {
     const userRef: AngularFirestoreDocument<any> = this.afStore.doc(
       `users/${user.uid}`
     );
-    this.setUser(user);
+    this.ngFireAuth.authState.subscribe(async(us) => {
+      await this.setUser(us);
+      const ourUser = await this.userService.createUser(user);
+      console.log(ourUser)
+      this.userService.setUser(new User(ourUser));
+    });
     return userRef.set(user, {
       merge: true,
     });
@@ -101,8 +105,11 @@ export class FirebaseService {
   }
 
   tryToReload() {
-    this.ngFireAuth.authState.subscribe((user) => {
-      this.setUser(user);
+    this.ngFireAuth.authState.subscribe(async(user) => {
+      await this.setUser(user);
+      const ourUser = await this.userService.getUser();
+      console.log(ourUser)
+      this.userService.setUser(new User(ourUser));
     });
   }
 }

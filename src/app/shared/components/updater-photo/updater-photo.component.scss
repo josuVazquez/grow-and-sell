@@ -1,0 +1,11 @@
+.container__photos {
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.7em 0.5em;
+
+  background-color: white;
+  border-radius: 0.7rem;
+  padding: 0.7em;
+}

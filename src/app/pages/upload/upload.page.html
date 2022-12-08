@@ -1,9 +1,13 @@
 <ion-content>
-  <h3 class="title">INFORMATION ABOUT YOU ITEM</h3>
-  <form class="form">
+  <h3 class="title">{{"upload.title" | translate}}</h3>
+  <form class="form" [formGroup]="productForm">
     <ion-item class="item">
-      <ion-label>What type of fresh product are you selling?</ion-label>
-      <ion-select placeholder="Select type" interface="popover" >
+      <ion-label>{{"upload.category" | translate}}</ion-label>
+      <ion-select
+        placeholder="Select category"
+        interface="popover"
+        formControlName="category"
+      >
         <ion-select-option
           *ngFor="let product of productTypes"
           value="{{product.value}}"
@@ -13,39 +17,41 @@
       </ion-select>
     </ion-item>
     <ion-item class="item">
-      <ion-label>What is the name?</ion-label>
-      <ion-input type="text" name="name"></ion-input>
+      <ion-label>{{"upload.name" | translate}}</ion-label>
+      <ion-input type="text" name="title" formControlName="title"></ion-input>
     </ion-item>
     <ion-item class="item">
-      <ion-label>Price</ion-label>
-      <ion-input type="text" name="name" class="ion-input--text-right">
+      <ion-label>{{"upload.price" | translate}}</ion-label>
+      <ion-input
+        type="text"
+        name="price"
+        class="ion-input--text-right"
+        formControlName="price"
+      >
       </ion-input>
     </ion-item>
     <ion-item class="item">
-      <ion-label>Moneda</ion-label>
-      <app-currency-drop-down>
-      </app-currency-drop-down>
+      <ion-label>{{"upload.currency" | translate}}</ion-label>
+      <app-currency-drop-down formControlName="currency"> </app-currency-drop-down>
     </ion-item>
     <ion-item class="item--big">
-      <ion-label>Description</ion-label>
-      <ion-textarea></ion-textarea>
+      <ion-label>{{"upload.description" | translate}}</ion-label>
+      <ion-textarea
+        name="Description"
+        formControlName="description"
+      ></ion-textarea>
     </ion-item>
   </form>
-  <h3 class="title">UPLOAD A PHOTO</h3>
+  <h3 class="title">{{"upload.photo-title" | translate}}</h3>
   <div class="fotos">
-
+    <app-updater-photo (pictureEmitter)="pictureChange($event)">
+    </app-updater-photo>
   </div>
   <app-map></app-map>
-  <!-- <h3 class="title">TUS PRODUCTOS SE VERAN EN :</h3>
-  <div class="map">
-  </div> -->
 
-  <ion-footer class="footer-buttons">
-    <ion-button class="button--round">
-      Upload Product
+  <div class="button">
+    <ion-button class="button--round" (click)="uploadProduct()">
+      {{"upload.upload-button" | translate}}
     </ion-button>
-    <ion-button class="button--round">
-      Cancel
-    </ion-button>
-  </ion-footer>
+  </div>
 </ion-content>

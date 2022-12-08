@@ -1,26 +1,51 @@
 {
-  "HEADER": {
-    "INPUT": {
-      "PLACEHOLDER": "Soy el placeholder"
+  "header": {
+    "input": {
+      "placeholder": "Soy el placeholder"
     },
-    "ADD_PRODUCT": "Añadir producto",
-    "LOGIN": "Registrarse o Iniciar sesion",
-    "FAVORITES": "Favoritos",
-    "PROFILE": "Perfil"
+    "add_product": "Añadir producto",
+    "login": "Registrarse o Iniciar sesion",
+    "favorites": "Favoritos",
+    "profile": "Perfil"
   },
-  "LOGIN": {
-    "TITLE": "Bienvenido",
-    "PLACEHOLDER": {
-      "USERNAME": "Inserte el usuario",
-      "PASSWORD": "Inserte la contraseña"
-    }
+  "login": {
+    "title": "Bienvenido",
+    "action": "Registrarse o Iniciar sesión",
+    "placeholder": {
+      "username": "Inserte el usuario",
+      "password": "Inserte la contraseña"
+    },
+    "google": "Inciar sesión con google"
   },
-  "ProductTypes": {
+  "profile": {
+    "logout": "Cerrar sesión",
+    "edit": "Editar perfil",
+    "save": "Guardar perfil"
+  },
+  "home": {
+    "title": "Bienvenido a Grow&Sell",
+    "banner": "¿Tienes un negocio y quieres empezar a vender online? Descubre nuestras soluciones para impulsar tus ventas. ¡Al lío!",
+    "product-list-title": "Productos cerca de ti"
+  },
+  "favorites": {
+    "title": "Favoritos"
+  },
+  "productTypes": {
     "vegetables": "Verduras/Hortalizas",
     "fruits": "Frutas",
     "dairyProducts": "Productos Lácteos",
     "legumes": "Legumbres",
     "tubers": "Tubérculos",
     "eggs": "Huevos"
+  },
+  "upload": {
+    "title": "Información del producto",
+    "category": "¿Que tipo de producto vendes?",
+    "name": "Nombre del producto",
+    "price": "Precio",
+    "currency": "Moneda",
+    "description": "Descripción",
+    "photo-title": "Subir foto",
+    "upload-button": "Confirmar"
   }
 }

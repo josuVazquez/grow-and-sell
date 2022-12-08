@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, CurrencyPipe } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -16,6 +16,7 @@ import { ComponentsModule } from 'src/app/shared/components/components.module';
     FormsModule,
     IonicModule,
     UploadPageRoutingModule,
+    ReactiveFormsModule,
     TranslateModule.forChild(),
     ComponentsModule
   ],

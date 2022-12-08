@@ -1,29 +1,47 @@
-<ion-content [scrollY]="false">
-  <header class="header__profile">
+<ion-content *ngIf="userService._getUser() | async as user">
+  <header class="profile__header">
     <div class="circle"></div>
-    <ion-icon name="person-circle-outline" *ngIf="data.img === ''"></ion-icon>
-    <img *ngIf="data.img !== ''" src="{{data.img}}" alt="" srcset="" />
+    <img [src]="user.photoURL" alt="" srcset="" />
   </header>
-  <div class="pages">
+  <form [formGroup]="userForm" class="profile__info">
     <ion-list>
       <ion-item lines="full">
         <ion-icon name="person-outline" slot="start"></ion-icon>
-        <ion-label>{{data.name}}</ion-label>
-      </ion-item>
-      <ion-item lines="full">
-        <ion-icon name="mail-outline" slot="start"></ion-icon>
-        <ion-label>{{data.email}}</ion-label>
+        <ion-input
+          formControlName="displayName"
+          value="{{user.displayName}}"
+          [readonly]="readOnly"
+        ></ion-input>
       </ion-item>
       <ion-item lines="full">
         <ion-icon name="call-outline" slot="start"></ion-icon>
-        <ion-label>{{data.phone}}</ion-label>
+        <ion-input
+          formControlName="phoneNumber"
+          value="{{user.phoneNumber}}"
+          [readonly]="readOnly"
+          tappable
+        ></ion-input>
       </ion-item>
-
       <ion-item lines="full">
         <ion-icon name="star-outline" slot="start"></ion-icon>
-        <ion-label>{{data.rating}}</ion-label>
+        <ion-label>{{user.rating}}</ion-label>
       </ion-item>
     </ion-list>
-    <ion-button class="button--round" (click)="logout()">Logout</ion-button>
-  </div>
+    <app-map></app-map>
+  </form>
+  <footer class="profile__footer">
+    <ion-button *ngIf="!readOnly" class="button--round" (click)="saveChanges()">
+      {{"profile.save" | translate}}
+    </ion-button>
+    <ion-button
+      *ngIf="readOnly"
+      class="button--round"
+      (click)="toggleReadOnly()"
+    >
+      {{"profile.edit" | translate}}
+    </ion-button>
+    <ion-button class="button--round" (click)="logout()">
+      {{"profile.logout" | translate}}
+    </ion-button>
+  </footer>
 </ion-content>

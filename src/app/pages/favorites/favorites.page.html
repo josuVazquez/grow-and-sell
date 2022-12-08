@@ -1,12 +1,6 @@
-
 <ion-content>
-  <h1>Favorites</h1>
-  <app-card
-    *ngFor="let item of cardExample"
-    [img]="item.img"
-    [title]="item.title"
-    [subtitle]="item.subtitle"
-    [description]="item.description"
-  >
-  </app-card>
+  <h1>{{"favorites.title" | translate}}</h1>
+  <div class="card-container">
+    <app-card *ngFor="let item of cardExample" [data]="item"> > </app-card>
+  </div>
 </ion-content>

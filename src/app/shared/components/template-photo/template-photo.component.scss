@@ -1,0 +1,79 @@
+// @import "../../../../theme/animations.css";
+
+@mixin square--selected {
+  border-color: var(--ion-color-primary);
+}
+
+@mixin square__icon--selected {
+  color: var(--ion-color-primary);
+}
+
+.button__close {
+  width: 1.5rem;
+  background-color: var(--ion-color-primary);
+  height: 1.5rem;
+  border-radius: 1.5rem;
+  display: none;
+}
+
+.image__container {
+  width: 100%;
+  text-align: center;
+  gap: 0.25em;
+  display: flex;
+  flex-direction: column;
+}
+
+.square__icon {
+  color: var(--ion-color-not-selected);
+  font-size: var(--fs-big-icon);
+}
+
+.square {
+  display: flex;
+  height: 7.5rem;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1 / 1;
+  border-radius: 1rem;
+  border-style: dashed;
+  border-width: 2px;
+  border-color: var(--ion-color-not-selected);
+  padding: 0.8em;
+  &:hover {
+    cursor: pointer;
+    @include square--selected;
+    .square__icon {
+      @include square__icon--selected;
+    }
+  }
+}
+
+.myFileInput {
+  display: none;
+}
+
+.image {
+  img {
+    width: 100%;
+    height: 7.5rem;
+    object-fit: cover;
+    border-radius: 0.8rem;
+    display: block;
+  }
+
+  &:hover {
+    cursor: pointer;
+    -webkit-animation: scale-up-center 0.2s linear both;
+    animation: scale-up-center 0.2s linear both;
+    .button__close {
+      display: flex;
+      position: absolute;
+      top: 0;
+      right: 0;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

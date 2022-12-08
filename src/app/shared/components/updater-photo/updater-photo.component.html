@@ -1,0 +1,9 @@
+<div class="container__photos">
+  <app-template-photo
+    *ngFor="let template of pictureArray; let i = index"
+    [img]="template?.url"
+    (changeImg)="changedImg($event, i)"
+    [text]="i === 0 ? 'First image' : ''"
+  >
+  </app-template-photo>
+</div>

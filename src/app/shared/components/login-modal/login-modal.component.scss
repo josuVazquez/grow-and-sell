@@ -1,7 +1,7 @@
 .login__text {
   text-align: center;
   display: flex;
-  gap: 32px;
+  gap: 2em;
   flex-direction: column;
   flex-wrap: nowrap;
   align-content: center;
@@ -9,7 +9,7 @@
   align-items: center;
 }
 
-.button--close {
+.button__close {
   width: fit-content;
   margin-left: auto;
 }

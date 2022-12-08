@@ -1,11 +1,22 @@
-<ion-card>
-  <img [src]="img" />
+<ion-card (click)="navigate(data._id)" class="card">
+  <img [src]="data.img" alt="Product image"/>
   <div class="text">
     <ion-card-header>
-      <ion-card-subtitle>{{ title }}</ion-card-subtitle>
-      <ion-card-title>{{ subtitle }}</ion-card-title>
+      <ion-card-title class="card__title">
+        {{ data.title }}
+        <button
+          title="Add to fav"
+          class="is--transparent"
+          (click)="toggleFavorite()"
+        >
+          <ion-icon [name]="favorite ? 'star' : 'star-outline'" class="card__favicon"
+            color="primary"></ion-icon>
+        </button>
+
+      </ion-card-title>
+      <ion-card-subtitle>{{ data.category }}</ion-card-subtitle>
     </ion-card-header>
 
-    <ion-card-content>{{ description }} </ion-card-content>
+    <ion-card-content>{{ data.description }} </ion-card-content>
   </div>
 </ion-card>

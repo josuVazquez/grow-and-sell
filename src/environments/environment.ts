@@ -11,7 +11,7 @@ export const environment = {
     storageBucket: 'growandsell-63435.appspot.com',
     messagingSenderId: '203491001692',
     appId: '1:203491001692:web:daab313b7fa1bd332fad99',
-    measurementId: 'G-DVNYKJH12P'
+    measurementId: 'G-DVNYKJH12P',
   },
   mapsAPI: 'AIzaSyDiiKuS3frUyj0QlmPtbebje96SSM4cRX8',
   backUrl: 'http://localhost:3000/'

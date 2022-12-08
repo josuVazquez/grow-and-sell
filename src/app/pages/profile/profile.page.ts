@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { FirebaseService } from 'src/app/shared/services/firebase.service';
 import { UserService } from 'src/app/shared/services/user.service';
 
@@ -7,33 +8,30 @@ import { UserService } from 'src/app/shared/services/user.service';
   templateUrl: './profile.page.html',
   styleUrls: ['./profile.page.scss'],
 })
-export class ProfilePage implements OnInit {
-  data = {
-    img: '',
-    name: 'Nombre Apellido Apellido',
-    email: 'example@example.com',
-    phone: '+34 12393123',
-    rating: '3.0 / 5.0',
-  };
+export class ProfilePage {
+  readOnly = true;
+
+  userForm = new FormGroup({
+    displayName: new FormControl('', [Validators.required]),
+    phoneNumber: new FormControl('', []),
+  });
 
   constructor(
-    private userService: UserService,
+    public userService: UserService,
     private firebaseService: FirebaseService
   ) {}
 
-  ngOnInit() {
-    // faltaria un rating y un numero de telefono opcional (?)
-    this.userService._getUser().subscribe((dt) => {
-      this.data = {
-        ...this.data,
-        name: dt.name,
-        email: dt.email,
-        img: dt.photoURL,
-      };
-    });
-  }
-
   logout() {
     this.firebaseService.SignOut();
+  }
+
+  saveChanges() {
+    const user = this.userForm.getRawValue();
+    this.userService.updateUser(user);
+    this.toggleReadOnly();
+  }
+
+  toggleReadOnly() {
+    this.readOnly = !this.readOnly;
   }
 }

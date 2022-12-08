@@ -1,0 +1,17 @@
+<div class="image__container" >
+  <div *ngIf="img" class="image">
+    <button (click)="delete()" class="button__close"><ion-icon name="close"></ion-icon></button>
+    <img [src]="img" />
+  </div>
+  <div class="square" *ngIf="!img" (click)="input.click()">
+    <ion-icon name="image-outline" class="square__icon"></ion-icon>
+    <input
+      #input
+      type="file"
+      (change)="showPreview($event)"
+      class="myFileInput"
+      accept="image/png, image/jpeg"
+    />
+  </div>
+  <span>{{text}}</span>
+</div>

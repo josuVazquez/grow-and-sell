@@ -3,6 +3,14 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+      "@services/*": ["./src/app/shared/services/*"],
+      "@components/*": ["./src/app/shared/components/*"],
+      "@interceptors/*": ["./src/app/shared/interceptors/*"],
+      "@guards/*": ["./src/app/shared/guards/*"],
+      "@models/*": ["./src/app/shared/models/*"],
+      "@scss/settings/*": ["./src/scss/settings/*"],
+    },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,

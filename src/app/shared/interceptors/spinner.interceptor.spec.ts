@@ -2,7 +2,7 @@ import { HttpClient, HttpRequest } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
-import { SpinnerService } from '../components/spinner/service/spinner.service';
+import { SpinnerService } from '../services/spinner.service';
 import { SpinnerInterceptor } from './spinner.interceptor';
 import { finalize } from 'rxjs/operators';
 
