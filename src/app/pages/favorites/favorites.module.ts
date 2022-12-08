@@ -8,9 +8,11 @@ import { FavoritesPageRoutingModule } from './favorites-routing.module';
 
 import { FavoritesPage } from './favorites.page';
 import { TranslateModule } from '@ngx-translate/core';
+import { ComponentsModule } from '@components/components.module';
 
 @NgModule({
   imports: [
+    ComponentsModule,
     CommonModule,
     FormsModule,
     IonicModule,

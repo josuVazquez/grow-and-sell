@@ -1,6 +1,8 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from '@models/user.model';
 import { UserService } from '@services/user.service';
+import { Subscription } from 'rxjs';
 import { Product } from '../../models/product.model';
 
 @Component({
@@ -9,37 +11,33 @@ import { Product } from '../../models/product.model';
   styleUrls: ['./card.component.scss'],
 })
 
-export class CardComponent {
+export class CardComponent implements OnInit, OnDestroy{
   @Input() data: Product;
-  isFavorite = false;
+  userPromise: Subscription;
+  favorite = false;
 
-  constructor(private router: Router, private userService: UserService) {}
+  constructor(private router: Router, private userService: UserService) {
+  }
+
+  ngOnDestroy(): void {
+    this.userPromise.unsubscribe();
+  }
+  ngOnInit(): void {
+    this.userPromise = this.userService._getUser().subscribe((user: User) => {
+      this.favorite = user?.favorites?.some(fav => fav === this.data._id);
+    });
+  }
 
   navigate(id: string) {
     this.router.navigate(['/product', id]);
   }
 
-  async setFavorites(event: Event) {
-    event.stopPropagation();
-    const userData = await this.userService.getUser();
-    userData.products.push(this.data);
-    this.userService.updateUser(userData);
-    this.toggleFavorite();
-  }
-
-  async unsetFavorites(event: Event) {
-    event.stopPropagation();
-
-    const userData = await this.userService.getUser();
-    userData.products.filter((product) => product.id !== this.data.uid);
-
-    this.userService.updateUser(userData);
-
-    this.toggleFavorite();
-  }
-
   toggleFavorite() {
-    this.isFavorite = !this.isFavorite;
+    if(this.favorite) {
+      this.userService.removeFavoriteProduct(this.data._id)
+    } else {
+      this.userService.addFavoriteProduct(this.data._id)
+    }
   }
 
 }

@@ -9,7 +9,7 @@
   <div class="products-list">
     <h2>{{ "home.product-list-title" | translate }}</h2>
     <div class="card-container">
-      <app-card *ngFor="let item of cardExample" [data]="item"> </app-card>
+      <app-card *ngFor="let product of products" [data]="product"> </app-card>
     </div>
   </div>
 </ion-content>

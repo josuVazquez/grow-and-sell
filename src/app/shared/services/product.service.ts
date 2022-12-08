@@ -18,9 +18,14 @@ export class ProductService {
     return this.httpClient.get(`${environment.backUrl}product/${id}`);
   }
 
-  createProduct(product: Product) {
+  createProduct(product: Product, files:any) {
+    console.log(files)
+    const formData = new FormData();
+    files.forEach(file => {
+      formData.append('files', file);
+    });
     return this.httpClient
-      .post(`${environment.backUrl}product`, product)
+      .post(`${environment.backUrl}product`, formData)
       .toPromise();
   }
 }

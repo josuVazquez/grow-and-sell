@@ -42,4 +42,12 @@ export class UserService {
   createUser(user: User): Promise<any> {
     return this.httpClient.post(`${environment.backUrl}user`, user).toPromise();
   }
+
+  addFavoriteProduct(productId) {
+    return this.httpClient.patch(`${environment.backUrl}user/favorite`, { productId })
+  }
+
+  removeFavoriteProduct(productId: string) {
+    return this.httpClient.delete(`${environment.backUrl}user/favorite/${productId}`)
+  }
 }

@@ -26,15 +26,19 @@ export class UploadPage implements OnInit {
     currency: new FormControl('', [Validators.required]),
     description: new FormControl('', [Validators.required])
   });
-
+  pictureArray: Array<any> = [];
   constructor(private currencyPipe: CurrencyPipe, private productService: ProductService) {}
 
   ngOnInit() {}
 
   uploadProduct() {
     const product = this.productForm.getRawValue();
-    console.log(product);
-    this.productService.createProduct(new Product(product));
+    console.log(this.pictureArray);
+    this.productService.createProduct(new Product(product), this.pictureArray.map(f => f.file));
     console.log('upload');
+  }
+
+  pictureChange(picture) {
+    this.pictureArray = picture;
   }
 }

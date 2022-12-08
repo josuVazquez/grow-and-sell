@@ -1,24 +1,27 @@
 @import "src/scss/settings/mixin.scss";
+@import "src/scss/settings/typography.scss";
 
-ion-card {
+.card {
   background: var(--ion-color-light);
   box-shadow: rgb(121 174 163 / 12%) 0px 0.25rem 1rem;
   margin: 1rem;
-  ion-card-title {
-    display: flex;
-    justify-content: space-between;
-  }
-
   img {
     max-height: 16rem;
     object-fit: cover;
     width: 100%;
   }
   &:hover {
-    background: var(--ion-color-primary);
-    color: white;
     cursor: pointer;
   }
+}
+
+.card__title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__favicon {
+  font-size: $fs-medium-icon;
 }
 
 @include tablet;

@@ -44,7 +44,8 @@
   </form>
   <h3 class="title">{{"upload.photo-title" | translate}}</h3>
   <div class="fotos">
-    <app-updater-photo></app-updater-photo>
+    <app-updater-photo (pictureEmitter)="pictureChange($event)">
+    </app-updater-photo>
   </div>
   <app-map></app-map>
 

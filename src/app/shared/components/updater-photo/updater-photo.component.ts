@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-updater-photo',
@@ -6,37 +6,39 @@ import { Component } from '@angular/core';
   styleUrls: ['./updater-photo.component.scss'],
 })
 export class UpdaterPhotoComponent {
-  arrayItems = new Array(10);
+  @Output() pictureEmitter = new EventEmitter();
+  pictureArray = new Array(10);
 
   constructor() {
   }
 
-  changedImg(url, index) {
-    if(url) {
-      this.pushImageToLastPosition(url);
+  changedImg(img, index) {
+    if(img.url) {
+      this.pushImageToLastPosition(img);
     } else {
-      this.arrayItems[index] = null;
+      this.pictureArray[index] = null;
       this.reorderArrayWhenDelete();
     }
+    this.pictureEmitter.emit(this.pictureArray);
   }
 
-  pushImageToLastPosition(url) {
-    for(let index = 0; index < this.arrayItems.length; index++) {
-      if(!this.arrayItems[index]) {
-        this.arrayItems[index] = url;
-        index = this.arrayItems.length;
+  pushImageToLastPosition(img) {
+    for(let index = 0; index < this.pictureArray.length; index++) {
+      if(!this.pictureArray[index]) {
+        this.pictureArray[index] = img;
+        index = this.pictureArray.length;
       }
     }
   }
 
   reorderArrayWhenDelete() {
     let firstNullFound = false;
-    for(let index = 0; index < this.arrayItems.length - 1; index++) {
-      if(!this.arrayItems[index] || firstNullFound) {
+    for(let index = 0; index < this.pictureArray.length - 1; index++) {
+      if(!this.pictureArray[index] || firstNullFound) {
         firstNullFound = true;
-        this.arrayItems[index] = this.arrayItems[index + 1];
+        this.pictureArray[index] = this.pictureArray[index + 1];
       }
     }
-    this.arrayItems[this.arrayItems.length - 1] = null;
+    this.pictureArray[this.pictureArray.length - 1] = null;
   }
 }

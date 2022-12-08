@@ -1,24 +1,18 @@
-<ion-card (click)="navigate(data._id)">
+<ion-card (click)="navigate(data._id)" class="card">
   <img [src]="data.img" alt="Product image"/>
   <div class="text">
     <ion-card-header>
-      <ion-card-title>
+      <ion-card-title class="card__title">
         {{ data.title }}
-        <ion-button
-          class="button--icon"
-          *ngIf="isFavorite"
-          (click)="setFavorites($event)"
+        <button
+          title="Add to fav"
+          class="is--transparent"
+          (click)="toggleFavorite()"
         >
-          <ion-icon name="star-outline"></ion-icon>
-        </ion-button>
+          <ion-icon [name]="favorite ? 'star' : 'star-outline'" class="card__favicon"
+            color="primary"></ion-icon>
+        </button>
 
-        <ion-button
-          class="button--icon"
-          *ngIf="!isFavorite"
-          (click)="unsetFavorites($event)"
-        >
-          <ion-icon name="star"></ion-icon>
-        </ion-button>
       </ion-card-title>
       <ion-card-subtitle>{{ data.category }}</ion-card-subtitle>
     </ion-card-header>

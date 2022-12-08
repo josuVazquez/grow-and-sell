@@ -21,7 +21,7 @@ export class TemplatePhotoComponent implements OnInit {
       const img = this.sanitizer.bypassSecurityTrustUrl(
         window.URL.createObjectURL(event.target.files[0])
       );
-      this.changeImg.emit(img);
+      this.changeImg.emit({url: img, file: event.target.files[0]});
     }
   }
 

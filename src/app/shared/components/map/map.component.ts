@@ -52,7 +52,6 @@ export class MapComponent implements OnInit, OnDestroy {
   }
 
   loadUserInfoIntoMap(position) {
-    console.log(position)
     const latLng = {
       lat: +position.coords.latitude,
       lng: +position.coords.longitude

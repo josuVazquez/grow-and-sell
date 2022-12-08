@@ -9,7 +9,8 @@ export class User {
   rating: number;
   lat: string;
   lng: string;
-  products: Product[] = [];
+  products: string[];
+  favorites: string[];
 
   constructor(data: Partial<User | any> = {}) {
     if (!data) {
@@ -24,6 +25,7 @@ export class User {
     this.photoURL = data.photoURL;
     this.lat = data.lat;
     this.lng = data.lng;
-    this.products = data.products;
+    this.products = data.products || [];
+    this.favorites = data.favorites || [];
   }
 }
