@@ -2,7 +2,7 @@ name: Crush images
 on:
   push:
     branches:
-      - main
+      - 'main'
     paths:
       - '**.jpg'
       - '**.jpeg'
